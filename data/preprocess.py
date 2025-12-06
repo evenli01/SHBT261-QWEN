@@ -1,6 +1,5 @@
 """
-Data preprocessing utilities for TextVQA dataset.
-Loads local HF datasets, processes images + questions, builds batches.
+Data preprocessing utilities for TextVQA + Qwen2.5-VL.
 """
 
 import torch
@@ -11,31 +10,36 @@ from PIL import Image
 import numpy as np
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
-import json
 
 
 # ============================================================
-#                   Load Local TextVQA Dataset 
+#                   Load Local TextVQA Dataset
 # ============================================================
 
 def load_textvqa_data(
     data_dir: str,
     split: str = "train",
-    use_hf_direct: bool = False
+    use_hf_direct: bool = False,
 ):
     """
-    Load TextVQA dataset **ONLY from local disk**.
+    Load TextVQA dataset from local disk (HuggingFace arrow).
+
+    Folder layout (already in your pod):
+        data_dir/
+            train/data/...
+            validation/data/...
+            test/data/...
     """
     if use_hf_direct:
         raise ValueError(
-            "Direct HF loading is disabled — dataset must be loaded from local disk."
+            "Direct HF loading is disabled. Use local dataset at data_dir instead."
         )
 
     split_path = Path(data_dir) / split / "data"
     if not split_path.exists():
         raise FileNotFoundError(
-            f"Dataset not found at {split_path} — "
-            f"ensure download_data.py stored local HF dataset correctly."
+            f"Dataset not found at {split_path}.\n"
+            f"Expected structure: {data_dir}/{split}/data/"
         )
 
     print(f"Loading local dataset: {split_path}")
@@ -50,7 +54,7 @@ def load_textvqa_data(
 
 class TextVQADataset(Dataset):
     """
-    TextVQA dataset for Qwen2.5-VL. Ensures pixel_values ALWAYS exist.
+    TextVQA dataset adapted for Qwen2.5-VL.
     """
 
     def __init__(
@@ -71,63 +75,57 @@ class TextVQADataset(Dataset):
     def __getitem__(self, idx):
         example = self.dataset[idx]
 
-        # Load image (path → PIL)
+        # Image: either already PIL or file path
         image = example["image"]
         if not isinstance(image, Image.Image):
             image = Image.open(image).convert("RGB")
 
         question = example["question"]
         answers = example.get("answers", [])
-
-        # Choose one answer for training; keep list for eval
         answer = answers[0] if isinstance(answers, list) and len(answers) > 0 else ""
 
-        # Qwen VL chat-format input
+        # Qwen chat-style prompt
         messages = [
             {
                 "role": "user",
                 "content": [
                     {"type": "image", "image": image},
-                    {"type": "text", "text": question}
-                ]
+                    {"type": "text", "text": question},
+                ],
             }
         ]
 
-        text_input = self.processor.apply_chat_template(
+        chat_text = self.processor.apply_chat_template(
             messages,
             tokenize=False,
             add_generation_prompt=True,
         )
 
-        # Process both text+image
+        # Process text + image jointly
         inputs = self.processor(
-            text=[text_input],
+            text=[chat_text],
             images=[image],
             return_tensors="pt",
-            padding=True
+            padding=True,
         )
 
-        # ========== FIX: Guarantee pixel_values exists ==============
-        if "pixel_values" in inputs:
-            pixel_values = inputs["pixel_values"].squeeze(0)
-        elif "image_grid_thw" in inputs:
-            pixel_values = inputs["image_grid_thw"].squeeze(0)
-        else:
-            raise ValueError(
-                f"Processor returned no image tensor. Keys={inputs.keys()}"
-            )
+        # Qwen2.5-VL expects BOTH pixel_values and image_grid_thw
+        if "pixel_values" not in inputs or "image_grid_thw" not in inputs:
+            raise ValueError(f"Processor missing required keys. Got: {inputs.keys()}")
 
+        pixel_values = inputs["pixel_values"].squeeze(0)      # [num_tokens, dim]
+        image_grid_thw = inputs["image_grid_thw"].squeeze(0)  # [3]
         input_ids = inputs["input_ids"].squeeze(0)
         attention_mask = inputs["attention_mask"].squeeze(0)
 
-        # For training, prepare label tokens
+        # Labels for training only
         if self.split == "train":
             label_ids = self.processor.tokenizer(
                 answer,
                 padding="max_length",
                 max_length=128,
                 truncation=True,
-                return_tensors="pt"
+                return_tensors="pt",
             )["input_ids"].squeeze(0)
         else:
             label_ids = None
@@ -136,11 +134,12 @@ class TextVQADataset(Dataset):
             "input_ids": input_ids,
             "attention_mask": attention_mask,
             "pixel_values": pixel_values,
+            "image_grid_thw": image_grid_thw,
             "labels": label_ids,
             "question": question,
             "answers": answers,
             "question_id": example.get("question_id", idx),
-            "image_id": example.get("image_id", "")
+            "image_id": example.get("image_id", ""),
         }
 
 
@@ -153,75 +152,72 @@ def collate_fn(batch: List[Dict]):
     Collate function for Qwen2.5-VL:
     - Pads input_ids + attention_mask to max length in batch
     - Pads pixel_values to max visual token length in batch
+    - Stacks image_grid_thw (shape [3] per image)
     """
 
-    # -------------------------------
-    # Pad text tokens
-    # -------------------------------
-    max_text_len = max(item["input_ids"].shape[0] for item in batch)
+    # ---- Text padding ----
+    max_len = max(item["input_ids"].shape[0] for item in batch)
 
-    input_ids = []
-    attention_masks = []
+    input_ids_list = []
+    attention_mask_list = []
 
     for item in batch:
         ids = item["input_ids"]
         mask = item["attention_mask"]
-
-        pad_len = max_text_len - ids.shape[0]
+        pad_len = max_len - ids.shape[0]
 
         if pad_len > 0:
             ids = torch.cat([ids, torch.zeros(pad_len, dtype=ids.dtype)])
             mask = torch.cat([mask, torch.zeros(pad_len, dtype=mask.dtype)])
 
-        input_ids.append(ids)
-        attention_masks.append(mask)
+        input_ids_list.append(ids)
+        attention_mask_list.append(mask)
 
-    input_ids = torch.stack(input_ids)
-    attention_masks = torch.stack(attention_masks)
+    input_ids = torch.stack(input_ids_list)          # [B, L]
+    attention_mask = torch.stack(attention_mask_list)
 
-    # -------------------------------
-    # Pad visual tokens
-    # Qwen2.5-VL image tensor shape: [num_tokens, hidden_dim]
-    # -------------------------------
-    pixel_values_list = [item["pixel_values"] for item in batch]
-    max_vis_len = max(pv.shape[0] for pv in pixel_values_list)
-    hidden_dim = pixel_values_list[0].shape[1]
+    # ---- Visual tokens padding ----
+    pv_list = [item["pixel_values"] for item in batch]        # each [T_i, D]
+    max_tokens = max(pv.shape[0] for pv in pv_list)
+    hidden_dim = pv_list[0].shape[1]
 
     padded_pv = []
-    for pv in pixel_values_list:
+    for pv in pv_list:
         num_tokens = pv.shape[0]
-        if num_tokens < max_vis_len:
-            pad = torch.zeros(max_vis_len - num_tokens, hidden_dim, dtype=pv.dtype)
+        if num_tokens < max_tokens:
+            pad_tokens = max_tokens - num_tokens
+            pad = torch.zeros(pad_tokens, hidden_dim, dtype=pv.dtype)
             pv = torch.cat([pv, pad], dim=0)
         padded_pv.append(pv)
 
-    pixel_values = torch.stack(padded_pv)
+    pixel_values = torch.stack(padded_pv)  # [B, max_tokens, D]
 
-    # -------------------------------
-    # Labels (optional)
-    # -------------------------------
+    # ---- image_grid_thw: [3] per image → [B, 3] ----
+    grid_list = [item["image_grid_thw"] for item in batch]  # each [3]
+    image_grid_thw = torch.stack(grid_list)
+
+    # ---- labels (optional) ----
     labels = (
         torch.stack([item["labels"] for item in batch])
-        if batch[0]["labels"] is not None else None
+        if batch[0]["labels"] is not None
+        else None
     )
 
-    # -------------------------------
-    # Metadata
-    # -------------------------------
     return {
         "input_ids": input_ids,
-        "attention_mask": attention_masks,
+        "attention_mask": attention_mask,
         "pixel_values": pixel_values,
+        "image_grid_thw": image_grid_thw,
         "labels": labels,
         "questions": [b["question"] for b in batch],
         "answers": [b["answers"] for b in batch],
         "question_ids": [b["question_id"] for b in batch],
-        "image_ids": [b["image_id"] for b in batch]
+        "image_ids": [b["image_id"] for b in batch],
     }
 
 
 # ============================================================
-#               Create train/val/test dataloaders
+#               Helper for full train/val/test loaders
 # ============================================================
 
 def create_dataloaders(
@@ -230,8 +226,7 @@ def create_dataloaders(
     train_batch_size: int = 4,
     eval_batch_size: int = 4,
     num_workers: int = 4,
-    max_length: int = 512,
-    subset_size: Optional[int] = None
+    subset_size: Optional[int] = None,
 ):
     train_ds = load_textvqa_data(data_dir, "train")
     val_ds = load_textvqa_data(data_dir, "validation")
@@ -245,19 +240,32 @@ def create_dataloaders(
     val_data = TextVQADataset(val_ds, processor, split="validation")
     test_data = TextVQADataset(test_ds, processor, split="test")
 
-    train_loader = DataLoader(train_data, batch_size=train_batch_size,
-                              shuffle=True, collate_fn=collate_fn,
-                              num_workers=num_workers)
+    train_loader = DataLoader(
+        train_data,
+        batch_size=train_batch_size,
+        shuffle=True,
+        num_workers=num_workers,
+        collate_fn=collate_fn,
+    )
 
-    val_loader = DataLoader(val_data, batch_size=eval_batch_size,
-                            shuffle=False, collate_fn=collate_fn,
-                            num_workers=num_workers)
+    val_loader = DataLoader(
+        val_data,
+        batch_size=eval_batch_size,
+        shuffle=False,
+        num_workers=num_workers,
+        collate_fn=collate_fn,
+    )
 
-    test_loader = DataLoader(test_data, batch_size=eval_batch_size,
-                             shuffle=False, collate_fn=collate_fn,
-                             num_workers=num_workers)
+    test_loader = DataLoader(
+        test_data,
+        batch_size=eval_batch_size,
+        shuffle=False,
+        num_workers=num_workers,
+        collate_fn=collate_fn,
+    )
 
     print(f"Train batches: {len(train_loader)}")
     print(f"Val batches:   {len(val_loader)}")
     print(f"Test batches:  {len(test_loader)}")
+
     return train_loader, val_loader, test_loader
