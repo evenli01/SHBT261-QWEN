@@ -150,11 +150,15 @@ class TextVQADataset(Dataset):
 
 def collate_fn(batch: List[Dict]):
     """
-    Batch input_ids, attention_mask, pixel_values (always padded).
+    Collate function for Qwen2.5-VL:
+    - Pads input_ids + attention_mask to max length in batch
+    - Pads pixel_values to max visual token length in batch
     """
 
-    # pad text
-    max_len = max(item["input_ids"].shape[0] for item in batch)
+    # -------------------------------
+    # Pad text tokens
+    # -------------------------------
+    max_text_len = max(item["input_ids"].shape[0] for item in batch)
 
     input_ids = []
     attention_masks = []
@@ -163,7 +167,8 @@ def collate_fn(batch: List[Dict]):
         ids = item["input_ids"]
         mask = item["attention_mask"]
 
-        pad_len = max_len - ids.shape[0]
+        pad_len = max_text_len - ids.shape[0]
+
         if pad_len > 0:
             ids = torch.cat([ids, torch.zeros(pad_len, dtype=ids.dtype)])
             mask = torch.cat([mask, torch.zeros(pad_len, dtype=mask.dtype)])
@@ -174,14 +179,35 @@ def collate_fn(batch: List[Dict]):
     input_ids = torch.stack(input_ids)
     attention_masks = torch.stack(attention_masks)
 
-    # pixel values: simple batch stack (processor resizes all images uniformly)
-    pixel_values = torch.stack([item["pixel_values"] for item in batch])
+    # -------------------------------
+    # Pad visual tokens
+    # Qwen2.5-VL image tensor shape: [num_tokens, hidden_dim]
+    # -------------------------------
+    pixel_values_list = [item["pixel_values"] for item in batch]
+    max_vis_len = max(pv.shape[0] for pv in pixel_values_list)
+    hidden_dim = pixel_values_list[0].shape[1]
 
+    padded_pv = []
+    for pv in pixel_values_list:
+        num_tokens = pv.shape[0]
+        if num_tokens < max_vis_len:
+            pad = torch.zeros(max_vis_len - num_tokens, hidden_dim, dtype=pv.dtype)
+            pv = torch.cat([pv, pad], dim=0)
+        padded_pv.append(pv)
+
+    pixel_values = torch.stack(padded_pv)
+
+    # -------------------------------
+    # Labels (optional)
+    # -------------------------------
     labels = (
         torch.stack([item["labels"] for item in batch])
         if batch[0]["labels"] is not None else None
     )
 
+    # -------------------------------
+    # Metadata
+    # -------------------------------
     return {
         "input_ids": input_ids,
         "attention_mask": attention_masks,
