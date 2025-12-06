@@ -178,10 +178,15 @@ def collate_fn(batch: List[Dict]) -> Dict[str, torch.Tensor]:
     attention_mask = torch.stack(attention_mask_list)
     
     # Handle pixel values (may be None for some examples)
+    # For Qwen2.5-VL, pixel values can have variable dimensions - keep as list
     pixel_values = None
     if batch[0]["pixel_values"] is not None:
-        # Pixel values should all have the same shape
-        pixel_values = torch.stack([item["pixel_values"] for item in batch])
+        try:
+            # Try stacking if they're the same size
+            pixel_values = torch.stack([item["pixel_values"] for item in batch])
+        except RuntimeError:
+            # If different sizes, keep as list (Qwen2.5-VL can handle this)
+            pixel_values = [item["pixel_values"] for item in batch]
     
     # Handle labels
     labels = None
