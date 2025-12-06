@@ -90,13 +90,12 @@ class TextVQADataset(Dataset):
             )
             
             # Process image and text
+            # Don't use max_length truncation for vision models - images have variable token counts
             inputs = self.processor(
                 text=[text],
                 images=[image],
                 return_tensors="pt",
-                padding="max_length",
-                max_length=self.max_length,
-                truncation=True
+                padding=True  # Dynamic padding instead of max_length
             )
             
             # Process answer for training
