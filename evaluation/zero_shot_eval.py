@@ -211,7 +211,7 @@ def main():
     parser.add_argument(
         "--use_hf_direct",
         action="store_true",
-        default=True,
+        default=False,
         help="Load dataset directly from HuggingFace"
     )
     
