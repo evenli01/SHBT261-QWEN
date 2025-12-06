@@ -1,6 +1,6 @@
 """
 Comprehensive evaluation metrics for TextVQA task.
-Includes accuracy, BLEU, METEOR, ROUGE, F1, and LLM-as-a-Judge metrics.
+Includes VQA-style accuracy, BLEU, METEOR, ROUGE, F1, and LLM-as-a-Judge metrics.
 """
 
 import numpy as np
@@ -22,6 +22,50 @@ try:
     nltk.download('punkt', quiet=True)
 except:
     pass
+
+
+# VQA-style evaluation - contractions and manual mappings from vqaEval.py
+VQA_CONTRACTIONS = {
+    "aint": "ain't", "arent": "aren't", "cant": "can't", "couldve": "could've", 
+    "couldnt": "couldn't", "couldn'tve": "couldn't've", "couldnt've": "couldn't've",
+    "didnt": "didn't", "doesnt": "doesn't", "dont": "don't", "hadnt": "hadn't",
+    "hadnt've": "hadn't've", "hadn'tve": "hadn't've", "hasnt": "hasn't",
+    "havent": "haven't", "hed": "he'd", "hed've": "he'd've", "he'dve": "he'd've",
+    "hes": "he's", "howd": "how'd", "howll": "how'll", "hows": "how's",
+    "Id've": "I'd've", "I'dve": "I'd've", "Im": "I'm", "Ive": "I've",
+    "isnt": "isn't", "itd": "it'd", "itd've": "it'd've", "it'dve": "it'd've",
+    "itll": "it'll", "let's": "let's", "maam": "ma'am", "mightnt": "mightn't",
+    "mightnt've": "mightn't've", "mightn'tve": "mightn't've", "mightve": "might've",
+    "mustnt": "mustn't", "mustve": "must've", "neednt": "needn't", "notve": "not've",
+    "oclock": "o'clock", "oughtnt": "oughtn't", "ow's'at": "'ow's'at",
+    "'ows'at": "'ow's'at", "'ow'sat": "'ow's'at", "shant": "shan't",
+    "shed've": "she'd've", "she'dve": "she'd've", "she's": "she's",
+    "shouldve": "should've", "shouldnt": "shouldn't", "shouldnt've": "shouldn't've",
+    "shouldn'tve": "shouldn't've", "thats": "that's", "thered": "there'd",
+    "thered've": "there'd've", "there'dve": "there'd've", "therere": "there're",
+    "theres": "there's", "theyd": "they'd", "theyd've": "they'd've",
+    "they'dve": "they'd've", "theyll": "they'll", "theyre": "they're",
+    "theyve": "they've", "twas": "'twas", "wasnt": "wasn't", "wed've": "we'd've",
+    "we'dve": "we'd've", "weve": "we've", "werent": "weren't", "whatll": "what'll",
+    "whatre": "what're", "whats": "what's", "whatve": "what've", "whens": "when's",
+    "whered": "where'd", "wheres": "where's", "whereve": "where've", "whod": "who'd",
+    "whod've": "who'd've", "who'dve": "who'd've", "wholl": "who'll", "whos": "who's",
+    "whove": "who've", "whyll": "why'll", "whyre": "why're", "whys": "why's",
+    "wont": "won't", "wouldve": "would've", "wouldnt": "wouldn't",
+    "wouldnt've": "wouldn't've", "wouldn'tve": "wouldn't've", "yall": "y'all",
+    "yall'll": "y'all'll", "y'allll": "y'all'll", "yall'd've": "y'all'd've",
+    "y'alld've": "y'all'd've", "y'all'dve": "y'all'd've", "youd": "you'd",
+    "youd've": "you'd've", "you'dve": "you'd've", "youll": "you'll",
+    "youre": "you're", "youve": "you've"
+}
+
+VQA_MANUAL_MAP = {
+    'none': '0', 'zero': '0', 'one': '1', 'two': '2', 'three': '3',
+    'four': '4', 'five': '5', 'six': '6', 'seven': '7', 'eight': '8',
+    'nine': '9', 'ten': '10'
+}
+
+VQA_ARTICLES = ['a', 'an', 'the']
 
 
 class TextVQAMetrics:
@@ -66,6 +110,116 @@ class TextVQAMetrics:
         answer = ' '.join(answer.split())
         
         return answer
+    
+    @staticmethod
+    def process_punctuation_vqa(text: str) -> str:
+        """
+        Process punctuation following VQA evaluation style.
+        
+        Args:
+            text: Input text
+            
+        Returns:
+            Text with punctuation processed
+        """
+        # Punctuation marks to process
+        punct = [';', r"/", '[', ']', '"', '{', '}', '(', ')', '=', '+', 
+                 '\\', '_', '-', '>', '<', '@', '`', ',', '?', '!']
+        
+        # Comma strip pattern for numbers
+        comma_strip = re.compile(r"(\d)(\,)(\d)")
+        # Period strip pattern
+        period_strip = re.compile(r"(?!<=\d)(\.)(?!\d)")
+        
+        out_text = text
+        for p in punct:
+            if (p + ' ' in text or ' ' + p in text) or (comma_strip.search(text) is not None):
+                out_text = out_text.replace(p, '')
+            else:
+                out_text = out_text.replace(p, ' ')
+        
+        out_text = period_strip.sub("", out_text, re.UNICODE)
+        return out_text
+    
+    @staticmethod
+    def process_digit_article_vqa(text: str) -> str:
+        """
+        Process digits and articles following VQA evaluation style.
+        
+        Args:
+            text: Input text
+            
+        Returns:
+            Text with digits and articles processed
+        """
+        out_text = []
+        temp_text = text.lower().split()
+        
+        for word in temp_text:
+            # Map words like "one" -> "1"
+            word = VQA_MANUAL_MAP.get(word, word)
+            # Remove articles
+            if word not in VQA_ARTICLES:
+                out_text.append(word)
+        
+        # Handle contractions
+        for word_id, word in enumerate(out_text):
+            if word in VQA_CONTRACTIONS:
+                out_text[word_id] = VQA_CONTRACTIONS[word]
+        
+        return ' '.join(out_text)
+    
+    def compute_vqa_accuracy(self, prediction: str, ground_truths: List[str]) -> float:
+        """
+        Compute VQA-style accuracy (official TextVQA metric).
+        
+        This follows the evaluation protocol from the TextVQA paper where
+        accuracy is based on agreement with human annotators.
+        
+        Args:
+            prediction: Predicted answer
+            ground_truths: List of acceptable ground truth answers (from multiple annotators)
+            
+        Returns:
+            Accuracy score between 0 and 1
+        """
+        # Clean up prediction and ground truths
+        prediction = prediction.replace('\n', ' ').replace('\t', ' ').strip()
+        gt_answers = [gt.replace('\n', ' ').replace('\t', ' ').strip() for gt in ground_truths]
+        
+        # Check if there are multiple different answers (requires processing)
+        if len(set(gt_answers)) > 1:
+            # Process prediction
+            processed_pred = self.process_punctuation_vqa(prediction)
+            processed_pred = self.process_digit_article_vqa(processed_pred)
+            
+            # Process ground truths
+            processed_gts = []
+            for gt in gt_answers:
+                processed_gt = self.process_punctuation_vqa(gt)
+                processed_gt = self.process_digit_article_vqa(processed_gt)
+                processed_gts.append(processed_gt)
+        else:
+            processed_pred = prediction.lower()
+            processed_gts = [gt.lower() for gt in gt_answers]
+        
+        # Compute accuracy based on agreement
+        # For each ground truth, count how many other GTs match the prediction
+        gt_acc = []
+        for i, gt_answer in enumerate(processed_gts):
+            # Other GT answers (excluding current one)
+            other_gts = [processed_gts[j] for j in range(len(processed_gts)) if j != i]
+            # Count how many match the prediction
+            matching_answers = [other_gt for other_gt in other_gts if other_gt == processed_pred]
+            # Accuracy is min(num_matching/3, 1) following VQA protocol
+            acc = min(1.0, float(len(matching_answers)) / 3.0)
+            gt_acc.append(acc)
+        
+        # Average accuracy across all ground truths
+        if len(gt_acc) > 0:
+            return float(sum(gt_acc)) / len(gt_acc)
+        else:
+            return 0.0
     
     def compute_exact_match(self, prediction: str, ground_truths: List[str]) -> float:
         """
@@ -318,8 +472,11 @@ Score:"""
         metrics = defaultdict(list)
         
         for i, (pred, gts) in enumerate(zip(predictions, ground_truths_list)):
-            # Primary metric
-            metrics['accuracy'].append(self.compute_exact_match(pred, gts))
+            # Primary metric - VQA-style accuracy (official TextVQA metric)
+            metrics['vqa_accuracy'].append(self.compute_vqa_accuracy(pred, gts))
+            
+            # Also compute exact match for comparison
+            metrics['exact_match'].append(self.compute_exact_match(pred, gts))
             
             # Token-level metrics
             metrics['f1'].append(self.compute_f1(pred, gts))
@@ -388,37 +545,64 @@ def print_metrics(metrics: Dict[str, float], title: str = "Evaluation Metrics"):
         metrics: Dictionary of metric scores
         title: Title for the metrics display
     """
-    print("\n" + "=" * 60)
-    print(f"{title:^60}")
-    print("=" * 60)
+    print("\n" + "=" * 80)
+    print(f"{title:^80}")
+    print("=" * 80)
     
-    # Primary metric
-    if 'accuracy' in metrics:
-        print(f"\n{'PRIMARY METRIC':<30} {'Score':>10}")
-        print("-" * 60)
-        print(f"{'Accuracy':<30} {metrics['accuracy']:>10.4f}")
+    # Primary metrics
+    print(f"\n{'PRIMARY METRICS (TextVQA Official)':<40} {'Score':>10} {'Percentage':>15}")
+    print("-" * 80)
+    if 'vqa_accuracy' in metrics:
+        print(f"{'VQA-style Accuracy (Official)':<40} {metrics['vqa_accuracy']:>10.4f} {metrics['vqa_accuracy']*100:>14.2f}%")
+    if 'exact_match' in metrics:
+        print(f"{'Exact Match (for comparison)':<40} {metrics['exact_match']:>10.4f} {metrics['exact_match']*100:>14.2f}%")
     
     # Semantic metrics
-    print(f"\n{'SEMANTIC METRICS':<30} {'Score':>10}")
-    print("-" * 60)
+    print(f"\n{'SEMANTIC METRICS':<40} {'Score':>10}")
+    print("-" * 80)
     for metric in ['bleu', 'meteor', 'rouge1', 'rouge2', 'rougeL']:
         if metric in metrics:
-            print(f"{metric.upper():<30} {metrics[metric]:>10.4f}")
+            display_name = metric.upper().replace('ROUGE1', 'ROUGE-1').replace('ROUGE2', 'ROUGE-2').replace('ROUGEL', 'ROUGE-L')
+            print(f"{display_name:<40} {metrics[metric]:>10.4f}")
     
     # Token-level metrics
-    print(f"\n{'TOKEN-LEVEL METRICS':<30} {'Score':>10}")
-    print("-" * 60)
+    print(f"\n{'TOKEN-LEVEL METRICS':<40} {'Score':>10}")
+    print("-" * 80)
     for metric in ['f1', 'precision', 'recall']:
         if metric in metrics:
-            print(f"{metric.capitalize():<30} {metrics[metric]:>10.4f}")
+            print(f"{metric.upper() if metric == 'f1' else metric.capitalize():<40} {metrics[metric]:>10.4f}")
     
     # LLM judge
     if 'llm_judge' in metrics:
-        print(f"\n{'LLM-AS-A-JUDGE':<30} {'Score':>10}")
-        print("-" * 60)
-        print(f"{'Semantic Similarity':<30} {metrics['llm_judge']:>10.4f}")
+        print(f"\n{'LLM-AS-A-JUDGE':<40} {'Score':>10}")
+        print("-" * 80)
+        print(f"{'Semantic Similarity':<40} {metrics['llm_judge']:>10.4f}")
     
-    print("=" * 60)
+    print("=" * 80)
+
+
+def compute_all_metrics(
+    predictions: List[str],
+    ground_truths_list: List[List[str]],
+    questions: Optional[List[str]] = None,
+    use_llm_judge: bool = False,
+    llm_api_key: Optional[str] = None
+) -> Dict[str, float]:
+    """
+    Convenience function to compute all metrics without creating TextVQAMetrics object.
+    
+    Args:
+        predictions: List of predicted answers
+        ground_truths_list: List of lists of ground truth answers
+        questions: Optional list of questions (for LLM judge)
+        use_llm_judge: Whether to use LLM-as-a-Judge evaluation
+        llm_api_key: API key for LLM service
+        
+    Returns:
+        Dictionary with all metric scores
+    """
+    metrics_calc = TextVQAMetrics(use_llm_judge=use_llm_judge, llm_api_key=llm_api_key)
+    return metrics_calc.compute_all_metrics(predictions, ground_truths_list, questions)
 
 
 if __name__ == "__main__":

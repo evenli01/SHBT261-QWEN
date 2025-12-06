@@ -27,10 +27,20 @@ def download_textvqa_dataset(output_dir="./textvqa_data", cache_dir=None):
     
     # Download dataset
     print("\n[1/4] Loading dataset from Hugging Face...")
+    
+    # Disable hf_transfer if it causes issues
+    if os.environ.get('HF_HUB_ENABLE_HF_TRANSFER') == '1':
+        try:
+            import hf_transfer
+        except ImportError:
+            print("  ⚠ Warning: HF_HUB_ENABLE_HF_TRANSFER is set but hf_transfer is not installed.")
+            print("  → Disabling fast transfer mode...")
+            os.environ['HF_HUB_ENABLE_HF_TRANSFER'] = '0'
+    
+    # Load dataset (trust_remote_code removed as it's deprecated)
     dataset = load_dataset(
         "lmms-lab/textvqa",
-        cache_dir=cache_dir,
-        trust_remote_code=True
+        cache_dir=cache_dir
     )
     
     print(f"\n[2/4] Dataset loaded successfully!")

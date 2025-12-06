@@ -3,7 +3,7 @@ Qwen2.5-VL model wrapper with LoRA support.
 """
 
 import torch
-from transformers import Qwen2VLForConditionalGeneration, Qwen2VLProcessor
+from transformers import AutoModelForVision2Seq, AutoProcessor
 from peft import get_peft_model, prepare_model_for_kbit_training
 from typing import Optional, Dict, Any
 import logging
@@ -59,8 +59,8 @@ class QwenVLModel:
                 bnb_4bit_quant_type="nf4"
             )
         
-        # Load model
-        self.model = Qwen2VLForConditionalGeneration.from_pretrained(
+        # Load model using Auto classes (supports both Qwen2VL and Qwen2.5VL)
+        self.model = AutoModelForVision2Seq.from_pretrained(
             self.config.model_name,
             torch_dtype=torch.bfloat16 if self.config.bf16 else torch.float16,
             device_map=self.config.device_map,
@@ -88,7 +88,7 @@ class QwenVLModel:
     def _initialize_processor(self):
         """Initialize the processor for Qwen2.5-VL."""
         logger.info("Loading processor")
-        self.processor = Qwen2VLProcessor.from_pretrained(
+        self.processor = AutoProcessor.from_pretrained(
             self.config.model_name,
             trust_remote_code=self.config.trust_remote_code
         )
