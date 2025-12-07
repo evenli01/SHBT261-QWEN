@@ -9,25 +9,25 @@ echo "======================================================="
 
 echo ""
 echo "=== Qwen Zero-shot: No OCR, baseline prompt ==="
-python scripts/run_eval.py --model qwen
+python scripts/run_eval.py --model qwen $LIMIT
 
 echo ""
 echo "=== Qwen Zero-shot: Descriptive prompt (no OCR) ==="
-python scripts/run_eval.py --model qwen --prompt_template descriptive
+python scripts/run_eval.py --model qwen --prompt_template descriptive $LIMIT
 
 echo ""
 echo "=== Qwen Zero-shot: Text-focus prompt (no OCR) ==="
-python scripts/run_eval.py --model qwen --prompt_template text_focus
+python scripts/run_eval.py --model qwen --prompt_template text_focus $LIMIT
 
 echo ""
 echo "=== Qwen Zero-shot: Basic OCR prompt ==="
 # Basic OCR = cleans OCR tokens and injects them as flat text
-python scripts/run_eval.py --model qwen --prompt_template basic_ocr
+python scripts/run_eval.py --model qwen --prompt_template basic_ocr $LIMIT
 
 echo ""
 echo "=== Qwen Zero-shot: Structured OCR prompt ==="
 # Structured OCR = category-aware OCR summarization
-python scripts/run_eval.py --model qwen --prompt_template structured_ocr
+python scripts/run_eval.py --model qwen --prompt_template structured_ocr $LIMIT
 
 echo ""
 echo "Zero-shot evaluation complete!"
