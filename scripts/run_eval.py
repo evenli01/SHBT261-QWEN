@@ -3,22 +3,26 @@
 import argparse
 import os
 import sys
+import json
+import re
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import torch
 from tqdm import tqdm
+from peft import PeftModel
+
 from utils.dataset import TextVQADataset
 from utils.metrics import calculate_metrics
 from models.qwen import QwenModel
-import json
-from peft import PeftModel
-import re
 
 
 # ---------- OCR utilities (same as classmate) ----------
 
 def clean_ocr_text(ocr_tokens, max_tokens=15, min_token_length=2):
+    """
+    Clean and filter OCR tokens to reduce noise.
+    """
     if not ocr_tokens:
         return ""
     cleaned = []
@@ -42,7 +46,11 @@ def clean_ocr_text(ocr_tokens, max_tokens=15, min_token_length=2):
 
 
 def classify_question(question):
+    """
+    Heuristic classification of question types for OCR structuring.
+    """
     q = question.lower()
+
     brand_keywords = ["brand", "logo", "label", "company", "manufacturer", "maker"]
     if any(k in q for k in brand_keywords):
         return "brand"
@@ -67,6 +75,9 @@ def classify_question(question):
 
 
 def summarize_ocr_by_type(ocr_tokens, q_type, max_tokens=15, min_token_length=2):
+    """
+    Category-aware OCR summarization for structured OCR prompts.
+    """
     if not ocr_tokens:
         return ""
     filtered_tokens = []
@@ -74,6 +85,7 @@ def summarize_ocr_by_type(ocr_tokens, q_type, max_tokens=15, min_token_length=2)
         token = token.strip()
         if not token or len(token) < min_token_length:
             continue
+
         alnum_ratio = sum(c.isalnum() for c in token) / len(token) if token else 0
         if alnum_ratio < 0.3:
             continue
@@ -115,15 +127,14 @@ PROMPT_TEMPLATES = {
     "direct": "{question}",
     "text_focus": "Focus on any visible text in the image. Question: {question}",
 
-    # Slightly tweaked short-answer style (not in your classmate’s file)
+    # Slightly tweaked short-answer style
     "short_direct": "Answer in 1–3 words: {question}",
 
-    # OCR-related templates (from classmate + aliases for your ablation)
+    # OCR-related templates (from classmate + your ablations)
     "ocr_hint": "The image contains the following text: {ocr_text}. Question: {question} Answer:",
     "ocr_hint_v3": "Answer this question about the image: {question}\nVisible text in image: {ocr_text}\nAnswer:",
 
-    # New friendly aliases for your ablation:
-    # Basic OCR → use cleaned OCR tokens directly
+    # Basic OCR → cleaned OCR tokens directly
     "basic_ocr": "Detected text in the image: {ocr_text}\nQuestion: {question}\nAnswer in a short phrase:",
 
     # Structured OCR → category-aware summary
@@ -142,6 +153,9 @@ PROMPT_TEMPLATES = {
 
 
 def get_qwen_model(lora_path=None):
+    """
+    Load Qwen model, optionally with a LoRA adapter.
+    """
     model = QwenModel()
     if lora_path:
         print(f"Loading LoRA adapter from {lora_path}...")
@@ -159,6 +173,7 @@ def evaluate(args):
             prompt_template = PROMPT_TEMPLATES[args.prompt_template]
             print(f"Using prompt template '{args.prompt_template}': {prompt_template}")
         else:
+            # custom format string
             prompt_template = args.prompt_template
             print(f"Using custom prompt template: {prompt_template}")
     else:
@@ -194,13 +209,14 @@ def evaluate(args):
 
         # Build formatted question
         if prompt_template:
+            # Category-aware structured OCR
             if "{ocr_summary}" in prompt_template and "{q_type}" in prompt_template:
                 if ocr_summary:
                     formatted_question = prompt_template.format(
                         question=question, ocr_summary=ocr_summary, q_type=q_type
                     )
                 else:
-                    # Fallback: strip OCR header lines if no OCR available
+                    # Fallback: strip OCR lines if no OCR available
                     stripped = (
                         prompt_template.replace(
                             "Relevant text in the image ({q_type}): {ocr_summary}\n", ""
@@ -209,6 +225,8 @@ def evaluate(args):
                         .replace("Answer in 1–3 words using that text:", "Answer briefly:")
                     )
                     formatted_question = stripped.format(question=question, q_type=q_type)
+
+            # Basic OCR text template
             elif "{ocr_text}" in prompt_template:
                 if ocr_text:
                     formatted_question = prompt_template.format(
@@ -219,13 +237,17 @@ def evaluate(args):
                         prompt_template.replace("{ocr_text}", "")
                         .replace("Detected text in the image:", "")
                         .replace("Visible text in image:", "")
+                        .replace("The image contains the following text:", "")
                     )
                     formatted_question = stripped.format(question=question)
+
+            # No OCR placeholders
             else:
                 formatted_question = prompt_template.format(question=question)
         else:
             formatted_question = question
 
+        # Generate answer
         try:
             predicted_answer = model.generate_answer(image, formatted_question)
         except (RuntimeError, torch.cuda.CudaError) as e:
@@ -241,6 +263,7 @@ def evaluate(args):
             print(f"Error generating answer for image {image_id}: {e}")
             predicted_answer = ""
 
+        # Build result item
         result_item = {
             "image_id": image_id,
             "question": question,
@@ -256,36 +279,25 @@ def evaluate(args):
 
         results.append(result_item)
 
+        # Periodic CUDA cache cleanup
         if (i + 1) % 50 == 0:
             try:
                 torch.cuda.empty_cache()
             except Exception:
                 pass
 
+    # ---- Metrics ----
     metrics = calculate_metrics(results)
     print("\nEvaluation Results:")
     for k, v in metrics.items():
-        # Skip per-category dict here; we'll print it separately
-        if k == "per_category":
-            continue
         if isinstance(v, (int, float)):
             print(f"  {k}: {v:.4f}")
         else:
             print(f"  {k}: {v}")
 
-    # Pretty-print per-category breakdown
-    per_cat = metrics.get("per_category", {})
-    if per_cat:
-        print("\nPer-Category Metrics:")
-        for cat, stats in per_cat.items():
-            print(f"  [{cat}]")
-            for sk, sv in stats.items():
-                if isinstance(sv, (int, float)):
-                    print(f"    {sk}: {sv:.4f}")
-                else:
-                    print(f"    {sk}: {sv}")
-
+    # ---- Save results ----
     os.makedirs("results", exist_ok=True)
+
     filename_parts = ["qwen"]
     if args.lora_path:
         filename_parts.append("finetuned")
@@ -322,8 +334,8 @@ if __name__ == "__main__":
     )
     parser.add_argument("--model", type=str, required=True, choices=["qwen"])
     parser.add_argument("--split", type=str, default="validation")
-    parser.add_argument("--limit", type=int, default=None)
-    parser.add_argument("--lora_path", type=str, default=None)
+    parser.add_argument("--limit", type=int, default=None, help="Limit samples for quick tests")
+    parser.add_argument("--lora_path", type=str, default=None, help="Path to LoRA checkpoint")
     parser.add_argument(
         "--prompt_template",
         type=str,
@@ -336,3 +348,4 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
     evaluate(args)
+
