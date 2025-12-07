@@ -5,7 +5,7 @@ echo "======================================================="
 
 # Optional: limit for quick debugging
 # LIMIT="--limit 100"
-# LIMIT=""
+LIMIT=""
 
 echo ""
 echo "=== Qwen Zero-shot: No OCR, baseline prompt ==="
