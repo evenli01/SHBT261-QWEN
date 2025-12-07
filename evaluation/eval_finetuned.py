@@ -10,7 +10,7 @@ from pathlib import Path
 from tqdm import tqdm
 import torch
 from peft import PeftModel
-from transformers import Qwen2VLForConditionalGeneration, Qwen2VLProcessor
+from transformers import Qwen2VLForConditionalGeneration, AutoProcessor
 from qwen_vl_utils import process_vision_info
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -28,13 +28,17 @@ class QwenFinetunedModel:
         self.model = Qwen2VLForConditionalGeneration.from_pretrained(
             base_model_path,
             torch_dtype=torch.bfloat16,
-            device_map="auto"
+            device_map="auto",
+            trust_remote_code=True
         )
         
         print(f"Loading LoRA adapter: {lora_path}")
         self.model = PeftModel.from_pretrained(self.model, lora_path)
         
-        self.processor = Qwen2VLProcessor.from_pretrained(base_model_path)
+        self.processor = AutoProcessor.from_pretrained(
+            base_model_path,
+            trust_remote_code=True
+        )
         self.device = self.model.device
         
         print("✓ Fine-tuned model loaded successfully")

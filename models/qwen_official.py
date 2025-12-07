@@ -3,7 +3,7 @@ Official Qwen2.5-VL model wrapper following successful approach.
 Uses qwen_vl_utils for proper vision processing.
 """
 
-from transformers import Qwen2VLForConditionalGeneration, Qwen2VLProcessor
+from transformers import Qwen2VLForConditionalGeneration, AutoProcessor
 from qwen_vl_utils import process_vision_info
 from PIL import Image
 import torch
@@ -42,15 +42,19 @@ class QwenVLModel:
         """Load the Qwen2.5-VL model and processor."""
         print(f"Loading Qwen model from {self.model_path}...")
         
-        # Load model
+        # Load model - use AutoModel to handle version correctly
         self.model = Qwen2VLForConditionalGeneration.from_pretrained(
             self.model_path,
             torch_dtype=self.torch_dtype,
-            device_map="auto"
+            device_map="auto",
+            trust_remote_code=True
         )
         
-        # Load processor
-        self.processor = Qwen2VLProcessor.from_pretrained(self.model_path)
+        # Load processor - use AutoProcessor for compatibility
+        self.processor = AutoProcessor.from_pretrained(
+            self.model_path,
+            trust_remote_code=True
+        )
         
         print(f"✓ Model loaded successfully on {self.device}")
     

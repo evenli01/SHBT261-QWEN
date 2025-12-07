@@ -116,14 +116,18 @@ def train_qwen_lora(args):
     
     # Load model with quantization
     print("[1/5] Loading model with 4-bit quantization...")
-    from transformers import Qwen2VLForConditionalGeneration, Qwen2VLProcessor
+    from transformers import Qwen2VLForConditionalGeneration, AutoProcessor
     
     model = Qwen2VLForConditionalGeneration.from_pretrained(
         args.model_path,
         quantization_config=bnb_config,
-        device_map="auto"
+        device_map="auto",
+        trust_remote_code=True
     )
-    processor = Qwen2VLProcessor.from_pretrained(args.model_path)
+    processor = AutoProcessor.from_pretrained(
+        args.model_path,
+        trust_remote_code=True
+    )
     
     # Prepare for LoRA
     print("[2/5] Preparing model for LoRA...")
