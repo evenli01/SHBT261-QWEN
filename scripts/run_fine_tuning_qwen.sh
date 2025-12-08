@@ -7,7 +7,7 @@ EPOCHS=3
 BATCH_SIZE=4      # per-GPU batch size
 GRAD_ACCUM=2      # effective batch size = 4 * 2 = 8
 LR=1e-4
-CUDA_ID=0         # adjust for your RunPod GPU index
+CUDA_ID=2         # adjust for your RunPod GPU index
 # LIMIT="--limit 100"  # uncomment for quick small-scale runs
 LIMIT=""
 
