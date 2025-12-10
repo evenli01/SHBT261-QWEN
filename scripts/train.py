@@ -20,7 +20,7 @@ def train(args):
     if args.model != "qwen":
         raise ValueError("This train.py is Qwen-only. Use --model qwen.")
 
-    # 4-bit quantization config (same as your classmate) :contentReference[oaicite:4]{index=4}
+    # 4-bit quantization config
     bnb_config = BitsAndBytesConfig(
         load_in_4bit=True,
         bnb_4bit_quant_type="nf4",
