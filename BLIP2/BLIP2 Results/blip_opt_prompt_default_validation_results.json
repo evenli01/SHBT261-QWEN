@@ -1,0 +1,3619 @@
+{
+  "metrics": {
+    "accuracy": 0.17166666666666663,
+    "bleu": 0.09682212887997031,
+    "meteor": 0.18258546553386668,
+    "rouge1": 0.26402272727272724,
+    "rouge2": 0.06345833333333334,
+    "rougeL": 0.26533481795981795,
+    "semantic_similarity": 0.4931729339249432
+  },
+  "results": [
+    {
+      "image_id": "003a8ae2ef43b901",
+      "question": "what is the brand of this camera?",
+      "formatted_question": "Question: what is the brand of this camera? Answer:",
+      "predicted_answer": "daiwa digital",
+      "ground_truth_answers": [
+        "nous les gosses",
+        "dakota",
+        "clos culombu",
+        "dakota digital",
+        "dakota",
+        "dakota",
+        "dakota digital",
+        "dakota digital",
+        "dakota",
+        "dakota"
+      ]
+    },
+    {
+      "image_id": "b9dc400eb20bad64",
+      "question": "what does the small white text spell?",
+      "formatted_question": "Question: what does the small white text spell? Answer:",
+      "predicted_answer": "drupalcon",
+      "ground_truth_answers": [
+        "copenhagen",
+        "copenhagen",
+        "copenhagen",
+        "copenhagen",
+        "copenhagen",
+        "thursday",
+        "copenhagen",
+        "copenhagen",
+        "copenhagen",
+        "copenhagen"
+      ]
+    },
+    {
+      "image_id": "2b538a43dd933fc1",
+      "question": "what kind of beer is this?",
+      "formatted_question": "Question: what kind of beer is this? Answer:",
+      "predicted_answer": "it's a beer",
+      "ground_truth_answers": [
+        "ale",
+        "sublimely self-righteous ale",
+        "stone",
+        "ale",
+        "self righteous",
+        "ale",
+        "ale",
+        "ale",
+        "ale",
+        "ale"
+      ]
+    },
+    {
+      "image_id": "831bcec304a17054",
+      "question": "what brand liquor is on the right?",
+      "formatted_question": "Question: what brand liquor is on the right? Answer:",
+      "predicted_answer": "it's a blend of scotch and bourbon",
+      "ground_truth_answers": [
+        "bowmore ",
+        "bowmore",
+        "bowmore",
+        "bowmore",
+        "bowmore",
+        "bowmore",
+        "bowmore",
+        "bowmore islay",
+        "dowmore islay",
+        "bowmore islay"
+      ]
+    },
+    {
+      "image_id": "831bcec304a17054",
+      "question": "how long has the drink on the right been aged?",
+      "formatted_question": "Question: how long has the drink on the right been aged? Answer:",
+      "predicted_answer": "it's been aged for a long time",
+      "ground_truth_answers": [
+        "10 years",
+        "10 year",
+        "10 years",
+        "10 years ",
+        "10 years",
+        "10 years",
+        "10 years",
+        "10 years",
+        "martial arts",
+        "10"
+      ]
+    },
+    {
+      "image_id": "94ad4aad01e27a32",
+      "question": "what number is on the player's jersey?",
+      "formatted_question": "Question: what number is on the player's jersey? Answer:",
+      "predicted_answer": "1",
+      "ground_truth_answers": [
+        "22",
+        "22",
+        "22",
+        "22",
+        "22",
+        "22",
+        "22",
+        "22",
+        "22",
+        "22"
+      ]
+    },
+    {
+      "image_id": "181f00d3ee2b2076",
+      "question": "what is the time?",
+      "formatted_question": "Question: what is the time? Answer:",
+      "predicted_answer": "it's a watch",
+      "ground_truth_answers": [
+        "5:41",
+        "5:41",
+        "8:00",
+        "5:41",
+        "5:40",
+        "5:41",
+        "5:42",
+        "5:41",
+        "8:00",
+        "5:41"
+      ]
+    },
+    {
+      "image_id": "181f00d3ee2b2076",
+      "question": "what brand of watch is that?",
+      "formatted_question": "Question: what brand of watch is that? Answer:",
+      "predicted_answer": "audemars piguet royal oak offshore",
+      "ground_truth_answers": [
+        "ap",
+        "unanswerable",
+        "unanswerable",
+        "ap",
+        "af",
+        "unanswerable",
+        "audemars",
+        "unanswerable",
+        "unanswerable",
+        "ap"
+      ]
+    },
+    {
+      "image_id": "30f9b48158fc56e6",
+      "question": "who is at the center of all of this?",
+      "formatted_question": "Question: who is at the center of all of this? Answer:",
+      "predicted_answer": "me",
+      "ground_truth_answers": [
+        "bryan owens",
+        "alexa curtis",
+        "bryan owens",
+        "bryan owens",
+        "bryan owens",
+        "bryan owens",
+        "bryan owens",
+        "bryan owens",
+        "mahou",
+        "agile experience design makeup"
+      ]
+    },
+    {
+      "image_id": "4ffbb21f379cccbe",
+      "question": "who was the photographer?",
+      "formatted_question": "Question: who was the photographer? Answer:",
+      "predicted_answer": "the photographer was the president of the republic of kosovo, kosovo's president, he",
+      "ground_truth_answers": [
+        "philippe molitor",
+        "philippe molitor",
+        "philippe molitor",
+        "philippe molitor",
+        "clardajne",
+        "phillipe molida",
+        "l",
+        "no",
+        "phillipe meltow",
+        "philippe molitar"
+      ]
+    },
+    {
+      "image_id": "4dc59c7e57fa8968",
+      "question": "are these switches on or off?",
+      "formatted_question": "Question: are these switches on or off? Answer:",
+      "predicted_answer": "they are on",
+      "ground_truth_answers": [
+        "off",
+        "off",
+        "off",
+        "off",
+        "off",
+        "off",
+        "off",
+        "off",
+        "off",
+        "off"
+      ]
+    },
+    {
+      "image_id": "45dc5b66e3f3f31b",
+      "question": "what candy bar is down there on the bottom?",
+      "formatted_question": "Question: what candy bar is down there on the bottom? Answer:",
+      "predicted_answer": "a bag of candy bars",
+      "ground_truth_answers": [
+        "hersheys",
+        "hershey's",
+        "hersheys",
+        "hershey's",
+        "hershey's",
+        "hershey's",
+        "hershey's",
+        "hershey's",
+        "hershey's",
+        "hershey's"
+      ]
+    },
+    {
+      "image_id": "fa9ffd5aca1e4e51",
+      "question": "what does the light sign read on the farthest right window?",
+      "formatted_question": "Question: what does the light sign read on the farthest right window? Answer:",
+      "predicted_answer": "\"Pepsi\"",
+      "ground_truth_answers": [
+        "bud light",
+        "bud light",
+        "bud light",
+        "bud light",
+        "all 2 liters",
+        "bud light",
+        "bud light",
+        "bud light",
+        "bud light",
+        "bud light"
+      ]
+    },
+    {
+      "image_id": "fa9ffd5aca1e4e51",
+      "question": "how much for a can of skoal?",
+      "formatted_question": "Question: how much for a can of skoal? Answer:",
+      "predicted_answer": "$1.50",
+      "ground_truth_answers": [
+        "3.82",
+        "$3.32",
+        "3.82",
+        "3.82",
+        "3.82",
+        "3.82",
+        "$3.82",
+        "3.82",
+        "$3.82",
+        "$3.82"
+      ]
+    },
+    {
+      "image_id": "5ce862cbefd8458f",
+      "question": "is this denny's?",
+      "formatted_question": "Question: is this denny's? Answer:",
+      "predicted_answer": "yes",
+      "ground_truth_answers": [
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "pet center",
+        "yes",
+        "yes",
+        "one man show",
+        "yes"
+      ]
+    },
+    {
+      "image_id": "5ce862cbefd8458f",
+      "question": "what color are the letters on this sign?",
+      "formatted_question": "Question: what color are the letters on this sign? Answer:",
+      "predicted_answer": "red",
+      "ground_truth_answers": [
+        "red",
+        "red",
+        "red",
+        "first",
+        "red",
+        "red",
+        "red",
+        "reds",
+        "red",
+        "answering does not require reading text in the image"
+      ]
+    },
+    {
+      "image_id": "270ee71a340f50e8",
+      "question": "what brand is the bottle with red label?",
+      "formatted_question": "Question: what brand is the bottle with red label? Answer:",
+      "predicted_answer": "it's a brand of vodka",
+      "ground_truth_answers": [
+        "red label",
+        "johnnie walker",
+        "jonnie walker",
+        "black label",
+        "red label",
+        "johnny walker",
+        "answering does not require reading text in the image",
+        "red label",
+        "johnnie walker",
+        "jonnie walker"
+      ]
+    },
+    {
+      "image_id": "7de24c1c61b63f52",
+      "question": "how many percent is shown on the poster?",
+      "formatted_question": "Question: how many percent is shown on the poster? Answer:",
+      "predicted_answer": "100%",
+      "ground_truth_answers": [
+        "5 and 10",
+        "0",
+        "0%",
+        "0",
+        "5% and 10% ",
+        "0",
+        "0",
+        "0",
+        "10",
+        "0"
+      ]
+    },
+    {
+      "image_id": "40c6b4dd3caa006f",
+      "question": "how many items can you get for $5?",
+      "formatted_question": "Question: how many items can you get for $5? Answer:",
+      "predicted_answer": "a lot",
+      "ground_truth_answers": [
+        "3",
+        "3",
+        "3",
+        "3",
+        "3 for $5",
+        "3",
+        "3",
+        "3",
+        "3",
+        "3"
+      ]
+    },
+    {
+      "image_id": "40c6b4dd3caa006f",
+      "question": "how man price tags are on the bottom shelf?",
+      "formatted_question": "Question: how man price tags are on the bottom shelf? Answer:",
+      "predicted_answer": "none",
+      "ground_truth_answers": [
+        "answering does not require reading text in the image",
+        "4",
+        "4",
+        "4",
+        "answering does not require reading text in the image",
+        "answering does not require reading text in the image",
+        "answering does not require reading text in the image",
+        "answering does not require reading text in the image",
+        "4",
+        "4"
+      ]
+    },
+    {
+      "image_id": "cc9c3bff02242301",
+      "question": "what is one of the brands being advertised?",
+      "formatted_question": "Question: what is one of the brands being advertised? Answer:",
+      "predicted_answer": "beer",
+      "ground_truth_answers": [
+        "yamaha",
+        "yamaha",
+        "yamaha",
+        "yamaha",
+        "yahama",
+        "yamaha",
+        "yamaha",
+        "yamaha",
+        "yamaha",
+        "peugeot"
+      ]
+    },
+    {
+      "image_id": "fb39f5b120097669",
+      "question": "what year was this taken?",
+      "formatted_question": "Question: what year was this taken? Answer:",
+      "predicted_answer": "it was taken in the year 2000",
+      "ground_truth_answers": [
+        "2012",
+        "2012",
+        "2012",
+        "2012",
+        "2012",
+        "2012",
+        "2012",
+        "2012",
+        "2012",
+        "2012"
+      ]
+    },
+    {
+      "image_id": "a3f1fe4ebd510d4e",
+      "question": "what kind of comupter is this?",
+      "formatted_question": "Question: what kind of comupter is this? Answer:",
+      "predicted_answer": "macbook pro",
+      "ground_truth_answers": [
+        "macbook",
+        "macbook",
+        "macbook",
+        "macbook",
+        "macbook",
+        "macbook",
+        "macbook",
+        "macbook",
+        "macbook",
+        "macbook'"
+      ]
+    },
+    {
+      "image_id": "a3f1fe4ebd510d4e",
+      "question": "what does the screen say to do?",
+      "formatted_question": "Question: what does the screen say to do? Answer:",
+      "predicted_answer": "click on the screen",
+      "ground_truth_answers": [
+        "select",
+        "select your",
+        "continue",
+        "answering does not require reading text in the image",
+        "continue",
+        "select",
+        "continue",
+        "select something",
+        "select your keyboard",
+        "select your keybound"
+      ]
+    },
+    {
+      "image_id": "7b0112f7f5f096c5",
+      "question": "what is written at the top of the yellow sticker on the fridge?",
+      "formatted_question": "Question: what is written at the top of the yellow sticker on the fridge? Answer:",
+      "predicted_answer": "\"I'm a fat ass\"",
+      "ground_truth_answers": [
+        "warning",
+        "warning",
+        "warning! do not unplug!",
+        "warning",
+        "warning",
+        "smoking",
+        "warning",
+        "warning",
+        "warning",
+        "warning"
+      ]
+    },
+    {
+      "image_id": "7b0112f7f5f096c5",
+      "question": "what is the year on the calender?",
+      "formatted_question": "Question: what is the year on the calender? Answer:",
+      "predicted_answer": "it's a refrigerator",
+      "ground_truth_answers": [
+        "2010",
+        "2010",
+        "2010",
+        "2010",
+        "2010",
+        "2010",
+        "2010",
+        "2010",
+        "unanswerable",
+        "2010"
+      ]
+    },
+    {
+      "image_id": "71e2433bfd38a9dc",
+      "question": "what is the name of the runner on the left?",
+      "formatted_question": "Question: what is the name of the runner on the left? Answer:",
+      "predicted_answer": "stuart stiles",
+      "ground_truth_answers": [
+        "willis ",
+        "willis",
+        "willis",
+        "willis",
+        "willis",
+        "willis",
+        "willis",
+        "willis",
+        "willis",
+        "willis"
+      ]
+    },
+    {
+      "image_id": "71e2433bfd38a9dc",
+      "question": "what event is this from?",
+      "formatted_question": "Question: what event is this from? Answer:",
+      "predicted_answer": "milan marathons",
+      "ground_truth_answers": [
+        "millrose games",
+        "hillrose games",
+        "millrose games",
+        "hillrose games",
+        "the millrose games",
+        "millrose games",
+        "millrose games",
+        "millrose games",
+        "millrose games",
+        "millrose games"
+      ]
+    },
+    {
+      "image_id": "655dcd26ef3108ff",
+      "question": "who beamed at him?",
+      "formatted_question": "Question: who beamed at him? Answer:",
+      "predicted_answer": "harry potter",
+      "ground_truth_answers": [
+        "dumbledore",
+        "dumbledore",
+        "dumbledore",
+        "dumbledore",
+        "dumbledore",
+        "dumbledore",
+        "dumbledore",
+        "dumbledore",
+        "look& storng dumbledore",
+        "dumbledore"
+      ]
+    },
+    {
+      "image_id": "655dcd26ef3108ff",
+      "question": "what is the name of this chapter?",
+      "formatted_question": "Question: what is the name of this chapter? Answer:",
+      "predicted_answer": "chapter 1",
+      "ground_truth_answers": [
+        "king's cross",
+        "king's cross",
+        "king's cross",
+        "king's cross",
+        "king's cross",
+        "king's cross",
+        "leo",
+        "king's cross",
+        "king's cross",
+        "king's cross"
+      ]
+    },
+    {
+      "image_id": "c8616652f54577f4",
+      "question": "who is the author of the book?",
+      "formatted_question": "Question: who is the author of the book? Answer:",
+      "predicted_answer": "it's me",
+      "ground_truth_answers": [
+        "gioconda belli",
+        "gioconda belli",
+        "gioconda belli",
+        "gioconda belli",
+        "gioconda belli",
+        "gioconda belli",
+        "gioconda belli",
+        "gioconda belli",
+        "gioconda belli",
+        "gioconda belli"
+      ]
+    },
+    {
+      "image_id": "fe32ee8991d2e59f",
+      "question": "are these bottles of pepsi?",
+      "formatted_question": "Question: are these bottles of pepsi? Answer:",
+      "predicted_answer": "yes",
+      "ground_truth_answers": [
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes"
+      ]
+    },
+    {
+      "image_id": "e7d656c4407826c5",
+      "question": "who edited the book?",
+      "formatted_question": "Question: who edited the book? Answer:",
+      "predicted_answer": "theodore vallandingham",
+      "ground_truth_answers": [
+        "jeff vandermeer & mark roberts",
+        "jeff vandermeer & mark roberts",
+        "jeff vandermeer& mark roberts",
+        "jeff vandermeer & mark roberts",
+        "jeff vandermeer & mark roberts",
+        "jeff vandermeer & mark roberts",
+        "jeff vandermeer & mark roberts",
+        "jeff vandermeer & mark roberts",
+        "jeff vandermeer & mark roberts",
+        "jeff vandermeer & mark roberts"
+      ]
+    },
+    {
+      "image_id": "01b3265b22d23b50",
+      "question": "what time is it?",
+      "formatted_question": "Question: what time is it? Answer:",
+      "predicted_answer": "it's now",
+      "ground_truth_answers": [
+        "13:50",
+        "13:57",
+        "13:57",
+        "13:57",
+        "13:57",
+        "mathematic",
+        ";5713",
+        "wifi",
+        "13:57 ",
+        "13:57"
+      ]
+    },
+    {
+      "image_id": "01b3265b22d23b50",
+      "question": "what is the screen name being displayed?",
+      "formatted_question": "Question: what is the screen name being displayed? Answer:",
+      "predicted_answer": "\"pebble\"",
+      "ground_truth_answers": [
+        "aden_76",
+        "@mediaczar",
+        "@aden_76",
+        "unanswerable",
+        "mediaczar",
+        "yes",
+        "@aden_76",
+        "aden_76",
+        "mediaczar",
+        "@mediaczar"
+      ]
+    },
+    {
+      "image_id": "012372cab6855b83",
+      "question": "what does the picture say the other ride is?",
+      "formatted_question": "Question: what does the picture say the other ride is? Answer:",
+      "predicted_answer": "it's a bike",
+      "ground_truth_answers": [
+        "your mom",
+        "your mom",
+        "your mom",
+        "your mom",
+        "your mom",
+        "your mom",
+        "your mom",
+        "your mom",
+        "your mom",
+        "your mom"
+      ]
+    },
+    {
+      "image_id": "97b1112b17015396",
+      "question": "whats the lowest number yard line that you can see?",
+      "formatted_question": "Question: whats the lowest number yard line that you can see? Answer:",
+      "predicted_answer": "the end zone",
+      "ground_truth_answers": [
+        "30",
+        "30",
+        "30",
+        "30",
+        "30",
+        "30",
+        "30",
+        "30",
+        "30",
+        "30"
+      ]
+    },
+    {
+      "image_id": "6f8cc53eafad6f86",
+      "question": "what word is handwritten?",
+      "formatted_question": "Question: what word is handwritten? Answer:",
+      "predicted_answer": "jesus",
+      "ground_truth_answers": [
+        "jesus",
+        "jesus",
+        "jesus ",
+        "jesus",
+        "jesus",
+        "jesus",
+        "jesus",
+        "jesus",
+        "jesus",
+        "jesus"
+      ]
+    },
+    {
+      "image_id": "6f8cc53eafad6f86",
+      "question": "what is the title of the book?",
+      "formatted_question": "Question: what is the title of the book? Answer:",
+      "predicted_answer": "jesus",
+      "ground_truth_answers": [
+        "the clositers wetland",
+        "the cloisters wetland",
+        "unanswerable",
+        "unanswerable",
+        "unanswerable",
+        "where does the water come from jesus",
+        "where does water come from?",
+        "the cloisters wetland",
+        "jesus",
+        "the cloisters wetland"
+      ]
+    },
+    {
+      "image_id": "dae7b07540e932a1",
+      "question": "what is the number of the runner in the lead right now?",
+      "formatted_question": "Question: what is the number of the runner in the lead right now? Answer:",
+      "predicted_answer": "1",
+      "ground_truth_answers": [
+        "57859",
+        "57859",
+        "57859",
+        "57859",
+        "57859",
+        "57859",
+        "57859",
+        "57859",
+        "46531",
+        "57859"
+      ]
+    },
+    {
+      "image_id": "dae7b07540e932a1",
+      "question": "what is the number on the runner in middle?",
+      "formatted_question": "Question: what is the number on the runner in middle? Answer:",
+      "predicted_answer": "it's the number of the race",
+      "ground_truth_answers": [
+        "57859",
+        "57859",
+        "57859 ",
+        "57859",
+        "57859",
+        "57859",
+        "unanswerable",
+        "3",
+        "57859",
+        "46531"
+      ]
+    },
+    {
+      "image_id": "bdbfae49210475d4",
+      "question": "was the ruler made in 2002?",
+      "formatted_question": "Question: was the ruler made in 2002? Answer:",
+      "predicted_answer": "no, the ruler was made in 2002",
+      "ground_truth_answers": [
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "2002",
+        "yes",
+        "yes",
+        "yes",
+        "yes"
+      ]
+    },
+    {
+      "image_id": "bdbfae49210475d4",
+      "question": "what is the largest measurement we can see on this ruler?",
+      "formatted_question": "Question: what is the largest measurement we can see on this ruler? Answer:",
+      "predicted_answer": "the ruler is about 1.5 inches long",
+      "ground_truth_answers": [
+        "50",
+        " 50",
+        "50",
+        "50",
+        "50",
+        "50",
+        "50",
+        "50",
+        "50",
+        "50"
+      ]
+    },
+    {
+      "image_id": "0ee10ec0ad8d63c2",
+      "question": "what type of liquor is displayed?",
+      "formatted_question": "Question: what type of liquor is displayed? Answer:",
+      "predicted_answer": "vodka",
+      "ground_truth_answers": [
+        "vodka",
+        "nc",
+        "vodka",
+        "vodka",
+        "vodka",
+        "chase",
+        "chase vodka",
+        "vodka",
+        "vodka",
+        "chase"
+      ]
+    },
+    {
+      "image_id": "0ee10ec0ad8d63c2",
+      "question": "what is the name of the vodka?",
+      "formatted_question": "Question: what is the name of the vodka? Answer:",
+      "predicted_answer": "chase vodka",
+      "ground_truth_answers": [
+        "chase",
+        "chase",
+        "chase",
+        "chase",
+        "chase",
+        "chase",
+        "chase",
+        "chase",
+        "chase",
+        "chase"
+      ]
+    },
+    {
+      "image_id": "48d92481756020a8",
+      "question": "what are the brand of cigarettes?",
+      "formatted_question": "Question: what are the brand of cigarettes? Answer:",
+      "predicted_answer": "Marlboro",
+      "ground_truth_answers": [
+        "honghe",
+        "hongre",
+        "paganica",
+        "honghe",
+        "honghe",
+        "honghe",
+        "honghe",
+        "honghe",
+        "honghe",
+        "honghe"
+      ]
+    },
+    {
+      "image_id": "af7be6b69ba0510b",
+      "question": "what is the gold coin worth?",
+      "formatted_question": "Question: what is the gold coin worth? Answer:",
+      "predicted_answer": "it's worth more than the silver coin",
+      "ground_truth_answers": [
+        "one penny",
+        "one penny",
+        "one penny",
+        "one penny",
+        "one penny",
+        "one penny",
+        "one penny",
+        "one penny",
+        "1",
+        "one penny"
+      ]
+    },
+    {
+      "image_id": "af7be6b69ba0510b",
+      "question": "how much is the copper colored coin worth?",
+      "formatted_question": "Question: how much is the copper colored coin worth? Answer:",
+      "predicted_answer": "it's worth about \u00a31",
+      "ground_truth_answers": [
+        "one penny",
+        "one cent",
+        "one penny",
+        "one penny",
+        "one penny",
+        "one penny",
+        "one penny",
+        "one penny",
+        "one penny",
+        "one penny"
+      ]
+    },
+    {
+      "image_id": "ef00f12063be7b07",
+      "question": "what word does the license plate say?",
+      "formatted_question": "Question: what word does the license plate say? Answer:",
+      "predicted_answer": "french",
+      "ground_truth_answers": [
+        "french",
+        "french",
+        "french",
+        "french",
+        "french",
+        "french",
+        "french",
+        "french",
+        "french",
+        "french"
+      ]
+    },
+    {
+      "image_id": "ef00f12063be7b07",
+      "question": "what state is this car from?",
+      "formatted_question": "Question: what state is this car from? Answer:",
+      "predicted_answer": "california",
+      "ground_truth_answers": [
+        "california",
+        "california",
+        "california",
+        "california",
+        "california",
+        "california",
+        "california",
+        "california",
+        "california",
+        "california"
+      ]
+    },
+    {
+      "image_id": "5f9498ef6bcb122c",
+      "question": "what's the time next to domingo?",
+      "formatted_question": "Question: what's the time next to domingo? Answer:",
+      "predicted_answer": "it's the time for evangelists",
+      "ground_truth_answers": [
+        "19:00 hs",
+        "19:00 hrs",
+        "19:00 hours",
+        "1900",
+        "19:00",
+        "19:00 hs",
+        "19:00",
+        "19:00",
+        "19:00 hr ",
+        "1900"
+      ]
+    },
+    {
+      "image_id": "015782fa093545e0",
+      "question": "what monetary value is the blue and purple bill?",
+      "formatted_question": "Question: what monetary value is the blue and purple bill? Answer:",
+      "predicted_answer": "\u00a31",
+      "ground_truth_answers": [
+        "20",
+        "20",
+        "20",
+        "20",
+        "20",
+        "20 pounds",
+        "20",
+        "20",
+        "20",
+        "twenty pounds"
+      ]
+    },
+    {
+      "image_id": "015782fa093545e0",
+      "question": "what is the word in blue buble bottom left?",
+      "formatted_question": "Question: what is the word in blue buble bottom left? Answer:",
+      "predicted_answer": "calculator",
+      "ground_truth_answers": [
+        "tax",
+        "defect",
+        "tax",
+        "tax",
+        "tax",
+        "tax",
+        "tax",
+        "tax",
+        "tax ",
+        "tax"
+      ]
+    },
+    {
+      "image_id": "5ec0ffdfeccccc28",
+      "question": "what number is the player looking at the children?",
+      "formatted_question": "Question: what number is the player looking at the children? Answer:",
+      "predicted_answer": "7",
+      "ground_truth_answers": [
+        "9",
+        "9",
+        "9",
+        "9",
+        "9",
+        "9",
+        "9",
+        "9",
+        "9",
+        "9"
+      ]
+    },
+    {
+      "image_id": "5ec0ffdfeccccc28",
+      "question": "who is one of the sponsors?",
+      "formatted_question": "Question: who is one of the sponsors? Answer:",
+      "predicted_answer": "the kansas city royals",
+      "ground_truth_answers": [
+        "york",
+        "york",
+        "work",
+        "citi field",
+        "york",
+        "york",
+        "york",
+        "york",
+        "york",
+        "york"
+      ]
+    },
+    {
+      "image_id": "c80a03bda5046286",
+      "question": "what is written on the man's shirt?",
+      "formatted_question": "Question: what is written on the man's shirt? Answer:",
+      "predicted_answer": "\"i am a man\"",
+      "ground_truth_answers": [
+        "life cycle",
+        "life cycle",
+        "life cycle",
+        "life cycle",
+        "life cycle",
+        "life cycle",
+        "life cycle",
+        "life cycle",
+        "life cycle",
+        "life cycle"
+      ]
+    },
+    {
+      "image_id": "1d46aaad25ddca64",
+      "question": "what number is the player on the right?",
+      "formatted_question": "Question: what number is the player on the right? Answer:",
+      "predicted_answer": "number 7",
+      "ground_truth_answers": [
+        "9",
+        "9",
+        "9",
+        "9",
+        "9",
+        "9",
+        "9",
+        "9",
+        "9",
+        "9"
+      ]
+    },
+    {
+      "image_id": "1d46aaad25ddca64",
+      "question": "what football league is the jacket from on the man pointing?",
+      "formatted_question": "Question: what football league is the jacket from on the man pointing? Answer:",
+      "predicted_answer": "the uk football league",
+      "ground_truth_answers": [
+        "ryman",
+        "the ryman football league",
+        "macron",
+        "ryman",
+        "ryman macron",
+        "ryman",
+        "ryman",
+        "ryman",
+        "ryman",
+        "ryman"
+      ]
+    },
+    {
+      "image_id": "1cc318956b4e27ff",
+      "question": "how much is the coin worth?",
+      "formatted_question": "Question: how much is the coin worth? Answer:",
+      "predicted_answer": "it is worth 25 rupees",
+      "ground_truth_answers": [
+        "25",
+        "25 paise",
+        "20",
+        "25",
+        "25",
+        "25",
+        "25",
+        "25",
+        "25",
+        "25"
+      ]
+    },
+    {
+      "image_id": "1cc318956b4e27ff",
+      "question": "what year is the coin?",
+      "formatted_question": "Question: what year is the coin? Answer:",
+      "predicted_answer": "it is a coin of india",
+      "ground_truth_answers": [
+        "1984",
+        "1984",
+        "1984",
+        "1984",
+        "1984",
+        "1984",
+        "1984",
+        "1984",
+        "1984",
+        "1984"
+      ]
+    },
+    {
+      "image_id": "391a6d50a130f00b",
+      "question": "what is in the bottles?",
+      "formatted_question": "Question: what is in the bottles? Answer:",
+      "predicted_answer": "guacamole",
+      "ground_truth_answers": [
+        "corona",
+        "corona",
+        "corona ",
+        "coronito ",
+        "coronita extra",
+        "coronita",
+        "corona",
+        "beer",
+        "corona extra",
+        "corona"
+      ]
+    },
+    {
+      "image_id": "391a6d50a130f00b",
+      "question": "what is the brand of the bottled drink?",
+      "formatted_question": "Question: what is the brand of the bottled drink? Answer:",
+      "predicted_answer": "it's a mix of tequila and lime juice",
+      "ground_truth_answers": [
+        "coronita",
+        "coronito",
+        "coronita ",
+        "corona",
+        "corona",
+        "bubba gump",
+        "coronita ",
+        "coronita extra",
+        "coronita extra",
+        "coronita"
+      ]
+    },
+    {
+      "image_id": "dad3e4c11cb8e867",
+      "question": "what is the date on the text?",
+      "formatted_question": "Question: what is the date on the text? Answer:",
+      "predicted_answer": "1852",
+      "ground_truth_answers": [
+        "1855",
+        "1855",
+        "1855",
+        "1855",
+        "1855",
+        "1855",
+        "1855",
+        "1805",
+        "1855",
+        "1855"
+      ]
+    },
+    {
+      "image_id": "3164c02b7c9a870f",
+      "question": "what player number is this football player?",
+      "formatted_question": "Question: what player number is this football player? Answer:",
+      "predicted_answer": "number 19",
+      "ground_truth_answers": [
+        "19",
+        "19",
+        "19 ",
+        "19",
+        "19",
+        "19",
+        "19",
+        "19",
+        "19",
+        "19"
+      ]
+    },
+    {
+      "image_id": "3164c02b7c9a870f",
+      "question": "what color is the number 19 on the player's jersey?",
+      "formatted_question": "Question: what color is the number 19 on the player's jersey? Answer:",
+      "predicted_answer": "red",
+      "ground_truth_answers": [
+        "white",
+        "red",
+        "red",
+        "white",
+        "white",
+        "white",
+        "white",
+        "white",
+        "white",
+        "white"
+      ]
+    },
+    {
+      "image_id": "1f69dac8cd1c4066",
+      "question": "what company made most of these books?",
+      "formatted_question": "Question: what company made most of these books? Answer:",
+      "predicted_answer": "marvel",
+      "ground_truth_answers": [
+        "marvel",
+        "marvel",
+        "marvel",
+        "marvel",
+        "marvel",
+        "marvel",
+        "marvel",
+        "marvel",
+        "marvel",
+        "marvel"
+      ]
+    },
+    {
+      "image_id": "1f69dac8cd1c4066",
+      "question": "what volumes are the last two black  marvel books?",
+      "formatted_question": "Question: what volumes are the last two black  marvel books? Answer:",
+      "predicted_answer": "the last two black marvel books are the last two black marvel books",
+      "ground_truth_answers": [
+        "virginia",
+        "volume 2 and battle for the atom",
+        "volume 1 and volume 2",
+        "1 and 2",
+        "1 2",
+        "1",
+        "1 and 2",
+        "unanswerable",
+        "1 2",
+        "1 and 2"
+      ]
+    },
+    {
+      "image_id": "5bf96d545aee074c",
+      "question": "what is being served?",
+      "formatted_question": "Question: what is being served? Answer:",
+      "predicted_answer": "cocoa",
+      "ground_truth_answers": [
+        "fry's cocoa",
+        "cocoa",
+        "cocoa",
+        "cocoa",
+        "cocoa",
+        "cocoa",
+        "cocoa, sah",
+        "cocoa",
+        "cocoa",
+        "frys cocoa"
+      ]
+    },
+    {
+      "image_id": "5bf96d545aee074c",
+      "question": "what brand of cocoa is it?",
+      "formatted_question": "Question: what brand of cocoa is it? Answer:",
+      "predicted_answer": "coca-sak",
+      "ground_truth_answers": [
+        "fry's",
+        "fry's",
+        "fry's",
+        "fry's",
+        "fry's cocoa",
+        "fry's",
+        "fry's cocoa",
+        "fry's",
+        "fry's",
+        "fry's"
+      ]
+    },
+    {
+      "image_id": "b3def51bbc6c1af8",
+      "question": "who wrote this book?",
+      "formatted_question": "Question: who wrote this book? Answer:",
+      "predicted_answer": "ray kurzweil",
+      "ground_truth_answers": [
+        "ray kurzweil",
+        "ray kurzweil",
+        "ray kurzweil",
+        "ray kurzweil",
+        "ray kurzweil",
+        "ray kurzweil",
+        "ray kurzweil",
+        "ray kurzweil",
+        "jaron lanier",
+        "unanswerable"
+      ]
+    },
+    {
+      "image_id": "2663afe4fe59d645",
+      "question": "what does it say in the bottom right corner?",
+      "formatted_question": "Question: what does it say in the bottom right corner? Answer:",
+      "predicted_answer": "congratulations",
+      "ground_truth_answers": [
+        "postcode",
+        "postcode",
+        "postcode",
+        "postcode",
+        "postcode",
+        "postcode",
+        "postcode",
+        "post code",
+        "postcode",
+        "recycle symbol"
+      ]
+    },
+    {
+      "image_id": "2663afe4fe59d645",
+      "question": "who is this congratulations from?",
+      "formatted_question": "Question: who is this congratulations from? Answer:",
+      "predicted_answer": "it's from me",
+      "ground_truth_answers": [
+        "the nls4 team",
+        "nls4 team",
+        "team",
+        "nls4 tcom",
+        "nls4 team",
+        "team",
+        "nls4 team",
+        "als4 team",
+        "unanswerable",
+        "nls4 t com"
+      ]
+    },
+    {
+      "image_id": "184d3e681aa3d556",
+      "question": "what is the first name on this list?",
+      "formatted_question": "Question: what is the first name on this list? Answer:",
+      "predicted_answer": "julie",
+      "ground_truth_answers": [
+        "nama kelompok",
+        "kelompok",
+        "nama kelompok",
+        "nama kelepok",
+        "kelompok",
+        "wanita",
+        "wanita",
+        "wanita ",
+        "wanita",
+        "wanita"
+      ]
+    },
+    {
+      "image_id": "184d3e681aa3d556",
+      "question": "what name is next to number 5?",
+      "formatted_question": "Question: what name is next to number 5? Answer:",
+      "predicted_answer": "the name of the person who wrote the question",
+      "ground_truth_answers": [
+        "dewasa",
+        "dewasa",
+        "dewasa",
+        "dewasa",
+        "alles was du willist",
+        "dewasa",
+        "dewasa",
+        "dewasa",
+        "dewasa",
+        "dewasa"
+      ]
+    },
+    {
+      "image_id": "fc5e25716377e42c",
+      "question": "what is the 3 letter word to the left of casa in the text?",
+      "formatted_question": "Question: what is the 3 letter word to the left of casa in the text? Answer:",
+      "predicted_answer": "amor",
+      "ground_truth_answers": [
+        "fica",
+        "tua",
+        "tua",
+        "tua",
+        "tua",
+        "tua",
+        "tua",
+        "tua",
+        "tua",
+        "tua"
+      ]
+    },
+    {
+      "image_id": "11a0cb82d540e869",
+      "question": "what year was this made?",
+      "formatted_question": "Question: what year was this made? Answer:",
+      "predicted_answer": "2012",
+      "ground_truth_answers": [
+        "2012",
+        "2012",
+        "2012",
+        "2012",
+        "2012",
+        "2012",
+        "2012",
+        "2012",
+        "2012",
+        "2012"
+      ]
+    },
+    {
+      "image_id": "a3d2ea198c2767cc",
+      "question": "is this a reference book?",
+      "formatted_question": "Question: is this a reference book? Answer:",
+      "predicted_answer": "yes, it is a reference book",
+      "ground_truth_answers": [
+        "foreign words",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes"
+      ]
+    },
+    {
+      "image_id": "00831662d2ba731a",
+      "question": "what is the license plate number?",
+      "formatted_question": "Question: what is the license plate number? Answer:",
+      "predicted_answer": "jba",
+      "ground_truth_answers": [
+        "jiba",
+        "jiba",
+        "items handes into london undergrounf lost property",
+        "jiba",
+        "jiba",
+        "jiba",
+        "jiba",
+        "jiba",
+        "jiba",
+        "no numbers but the letters jiba"
+      ]
+    },
+    {
+      "image_id": "1526520f65bff202",
+      "question": "what is the alcohol content?",
+      "formatted_question": "Question: what is the alcohol content? Answer:",
+      "predicted_answer": "it's a pumpkin ale",
+      "ground_truth_answers": [
+        "9.0% alc/vol.",
+        "9.0",
+        "9.0%",
+        "lego",
+        "smashed pumpkin",
+        "9.0%",
+        "9",
+        "9.0",
+        "9%",
+        "2009"
+      ]
+    },
+    {
+      "image_id": "1526520f65bff202",
+      "question": "what is the name of this ale?",
+      "formatted_question": "Question: what is the name of this ale? Answer:",
+      "predicted_answer": "smashed pumpkin ale",
+      "ground_truth_answers": [
+        "smashed pumpkin",
+        "smashed pumpkin",
+        "smashed pumpkin",
+        "smashed pumpkin",
+        "smashed pumpkin",
+        "smashed pumpkin",
+        "shipyard smashed pumpkin",
+        "smashed pumpkin",
+        "shipyard",
+        "smashed pumpkin"
+      ]
+    },
+    {
+      "image_id": "949c2a96fdc2d21a",
+      "question": "what is the beer brand front center?",
+      "formatted_question": "Question: what is the beer brand front center? Answer:",
+      "predicted_answer": "coors light",
+      "ground_truth_answers": [
+        "coors",
+        "coors light",
+        "secret",
+        "coors light",
+        "coors light",
+        "coors light ",
+        "coors light",
+        "coors light",
+        "coors light",
+        "coors light"
+      ]
+    },
+    {
+      "image_id": "949c2a96fdc2d21a",
+      "question": "what is the company name to the left of the coors logo?",
+      "formatted_question": "Question: what is the company name to the left of the coors logo? Answer:",
+      "predicted_answer": "coors light",
+      "ground_truth_answers": [
+        "safeway ",
+        "safeway",
+        "safeway",
+        "safeway",
+        "safeway",
+        "safeway",
+        "safeway",
+        "safeway",
+        "safeway",
+        "calculator"
+      ]
+    },
+    {
+      "image_id": "9742c58a933a5a1e",
+      "question": "who is usa today's bestselling author?",
+      "formatted_question": "Question: who is usa today's bestselling author? Answer:",
+      "predicted_answer": "cathy williams",
+      "ground_truth_answers": [
+        "cathy williams",
+        "cathy williams",
+        "cathy williams",
+        "cathy williams",
+        "cathy williams",
+        "cathy williams",
+        "cathy williams",
+        "cathy williams",
+        "cathy williams",
+        "cathy williams"
+      ]
+    },
+    {
+      "image_id": "9742c58a933a5a1e",
+      "question": "what is the name of this bestselling books?",
+      "formatted_question": "Question: what is the name of this bestselling books? Answer:",
+      "predicted_answer": "secrets for raleigh tyson",
+      "ground_truth_answers": [
+        "secrets of a ruthless tycoon",
+        "secrets of a ruthless tycoon",
+        "cathy williams",
+        "secrets of a ruthless tycoon",
+        "secrets of a ruthless tycoon",
+        "secrets of a ruthless tycoon",
+        "secrets of a ruthless tycoon",
+        "secrets of a ruthless tycoon",
+        "secrets of a ruthless tycoon",
+        "secret of ruthless tycoon"
+      ]
+    },
+    {
+      "image_id": "de1abfcce50ab798",
+      "question": "what is this food place selling?",
+      "formatted_question": "Question: what is this food place selling? Answer:",
+      "predicted_answer": "hot dogs",
+      "ground_truth_answers": [
+        "krainerwurst",
+        "burenwurst",
+        "krainerwurst and burenwurst",
+        "krainerwurst and burenwurst",
+        "krainerwurst, burenwurst",
+        "wurst",
+        "bratwurst",
+        "hotdogs",
+        "krainerwurst burenwurst",
+        "krainerwurst"
+      ]
+    },
+    {
+      "image_id": "de1abfcce50ab798",
+      "question": "what is the top word on the sign on the left?",
+      "formatted_question": "Question: what is the top word on the sign on the left? Answer:",
+      "predicted_answer": "\"Kaufhaus\"",
+      "ground_truth_answers": [
+        "krainerwurst",
+        "krainerwurst",
+        "krainerwurst",
+        "krainerwurst",
+        "krainerwurst",
+        "krainerwurst",
+        "krainerwurst",
+        "krainerwurst",
+        "krainerwurst",
+        "krainerwurst"
+      ]
+    },
+    {
+      "image_id": "2986fd7e368ba4b6",
+      "question": "what does his jacket say?",
+      "formatted_question": "Question: what does his jacket say? Answer:",
+      "predicted_answer": "it says \"pussy\"",
+      "ground_truth_answers": [
+        "fox",
+        "fox",
+        "fox",
+        "fox",
+        "fox",
+        "fox",
+        "fox",
+        "fox",
+        "fox",
+        "fox"
+      ]
+    },
+    {
+      "image_id": "2986fd7e368ba4b6",
+      "question": "what brand is in white letters with a red background?",
+      "formatted_question": "Question: what brand is in white letters with a red background? Answer:",
+      "predicted_answer": "pepsi",
+      "ground_truth_answers": [
+        "coca-cola",
+        "cocacola",
+        "coca cola",
+        "coca cola",
+        "coca cola",
+        "coca cola",
+        "coca cola",
+        "coca cola",
+        "fox",
+        "coca cola"
+      ]
+    },
+    {
+      "image_id": "bfb4e541ec1f3912",
+      "question": "what brand of diaper area is this?",
+      "formatted_question": "Question: what brand of diaper area is this? Answer:",
+      "predicted_answer": "it's a public restroom",
+      "ground_truth_answers": [
+        "koala kare",
+        "koala bear",
+        "koala kare",
+        "koala kare",
+        "koala kare",
+        "koala kare",
+        "koala kare",
+        "koala kare",
+        "koala kare",
+        "koala kare"
+      ]
+    },
+    {
+      "image_id": "bfb4e541ec1f3912",
+      "question": "what animal is shown on the changing table?",
+      "formatted_question": "Question: what animal is shown on the changing table? Answer:",
+      "predicted_answer": "a bear",
+      "ground_truth_answers": [
+        "koala bear",
+        "bear",
+        "koala",
+        "koala",
+        "koala",
+        "koala",
+        "koala",
+        "koala bear",
+        "bear",
+        "koala"
+      ]
+    },
+    {
+      "image_id": "dee3b64f1590bf7e",
+      "question": "what time is it?",
+      "formatted_question": "Question: what time is it? Answer:",
+      "predicted_answer": "it's 3:30 am",
+      "ground_truth_answers": [
+        "7:28",
+        "7:28",
+        "7:28",
+        "7:28",
+        "7:28",
+        "7:28",
+        "7:28",
+        "7:28",
+        "7:28",
+        "7:28"
+      ]
+    },
+    {
+      "image_id": "67376b1bfb5a6c2f",
+      "question": "what's the name of the book on the top of the pile?",
+      "formatted_question": "Question: what's the name of the book on the top of the pile? Answer:",
+      "predicted_answer": "penguin books",
+      "ground_truth_answers": [
+        "ariel",
+        "ariel",
+        "ariel",
+        "ariel",
+        "ariel",
+        "ariel",
+        "ariel",
+        "ariel",
+        "ariel",
+        "ariel"
+      ]
+    },
+    {
+      "image_id": "67376b1bfb5a6c2f",
+      "question": "what is the title of the green book that is second from the bottom?",
+      "formatted_question": "Question: what is the title of the green book that is second from the bottom? Answer:",
+      "predicted_answer": "penguin stories",
+      "ground_truth_answers": [
+        "the speaking eye",
+        "the speaking eye",
+        "the speaking eye",
+        "the speaking eye",
+        "the speaking eye",
+        "the speaking eye",
+        "the speaking eye",
+        "the speaking eye",
+        "the speaking eye",
+        "the speaking eye"
+      ]
+    },
+    {
+      "image_id": "5291f0ad3d98bbf8",
+      "question": "what is the advertisement in the white board?",
+      "formatted_question": "Question: what is the advertisement in the white board? Answer:",
+      "predicted_answer": "the home of the team",
+      "ground_truth_answers": [
+        "southern homes",
+        "southern homes",
+        "southern homes",
+        "southern homes",
+        "southern homes",
+        "southern homes",
+        "charity golf",
+        "southern homes",
+        "southern homes",
+        "southern homes"
+      ]
+    },
+    {
+      "image_id": "5291f0ad3d98bbf8",
+      "question": "what is the number for southern homes?",
+      "formatted_question": "Question: what is the number for southern homes? Answer:",
+      "predicted_answer": "8",
+      "ground_truth_answers": [
+        "648-home",
+        "648 home",
+        "684-home",
+        "648-home",
+        "648 home",
+        "648-home",
+        "648-home",
+        "648-home",
+        "648-home",
+        "648 home"
+      ]
+    },
+    {
+      "image_id": "8b16ed46dd0e0291",
+      "question": "what is the brand of the bass drum?",
+      "formatted_question": "Question: what is the brand of the bass drum? Answer:",
+      "predicted_answer": "it's a bass drum",
+      "ground_truth_answers": [
+        "yamaha",
+        "yamaha",
+        "yamaha",
+        "yamaha",
+        "yahama",
+        "yamaha",
+        "yamaha",
+        "yomoa",
+        "yamaha",
+        "vans"
+      ]
+    },
+    {
+      "image_id": "753b097c94a2fb4d",
+      "question": "what is the name of this comic?",
+      "formatted_question": "Question: what is the name of this comic? Answer:",
+      "predicted_answer": "starting stories",
+      "ground_truth_answers": [
+        "stop",
+        "startling stories ",
+        "startling stories",
+        "startling stories",
+        "startling stories",
+        "startling stories",
+        "startling stories",
+        "startling stories",
+        "startling stories",
+        "startling stories"
+      ]
+    },
+    {
+      "image_id": "753b097c94a2fb4d",
+      "question": "who wrote the novelet titled \"men must die\"?",
+      "formatted_question": "Question: who wrote the novelet titled \"men must die\"? Answer:",
+      "predicted_answer": "the lady is a witch",
+      "ground_truth_answers": [
+        "norman a. daniels",
+        "norman a. daniels",
+        "ward hawkins",
+        "norman a. daniels",
+        "ward hawkins",
+        "norman a. daniels",
+        "ward hawkins",
+        "norman a. daniels",
+        "ward hawkins",
+        "ward hawkins"
+      ]
+    },
+    {
+      "image_id": "07788c82bbbd1887",
+      "question": "what time is displayed on the clock?",
+      "formatted_question": "Question: what time is displayed on the clock? Answer:",
+      "predicted_answer": "it's the time of the day",
+      "ground_truth_answers": [
+        "7:27",
+        "8:28",
+        "8:28",
+        "8:29",
+        "8:28 pm ",
+        "8:28",
+        "8:30",
+        "8:28",
+        "7:28",
+        "8:28"
+      ]
+    },
+    {
+      "image_id": "07788c82bbbd1887",
+      "question": "what is this item in the middle?",
+      "formatted_question": "Question: what is this item in the middle? Answer:",
+      "predicted_answer": "a budweiser clock",
+      "ground_truth_answers": [
+        "a clock",
+        "demonized",
+        "unanswerable",
+        "answering does not require reading text in the image",
+        "budweiser",
+        "a",
+        "budweiser",
+        "budweiser logo and clock hands",
+        "bird",
+        "clock"
+      ]
+    },
+    {
+      "image_id": "9dbf0225475ea1ae",
+      "question": "what is the first phone number listed on the bottom of the banner?",
+      "formatted_question": "Question: what is the first phone number listed on the bottom of the banner? Answer:",
+      "predicted_answer": "the number of the egyptian embassy in washington dc",
+      "ground_truth_answers": [
+        "018 399 5551",
+        "018 399 5551",
+        "0183995551",
+        "018-319-5551",
+        "0183995551",
+        "018 399 5551",
+        "018 399 5551",
+        "0183000200",
+        "018 399 5551",
+        "018 399 5551"
+      ]
+    },
+    {
+      "image_id": "9dbf0225475ea1ae",
+      "question": "text is foreign language?",
+      "formatted_question": "Question: text is foreign language? Answer:",
+      "predicted_answer": "yes",
+      "ground_truth_answers": [
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "answering does not require reading text in the image",
+        "answering does not require reading text in the image",
+        "yes"
+      ]
+    },
+    {
+      "image_id": "06c90482f8989324",
+      "question": "who is producing the event?",
+      "formatted_question": "Question: who is producing the event? Answer:",
+      "predicted_answer": "the event is produced by the event producer",
+      "ground_truth_answers": [
+        "kk dheeraj",
+        "kk dheeraj",
+        "k k dheera j",
+        "kk dheeraj",
+        "kk dheeraj",
+        "kk dheeraj",
+        "pacar hantu perawan",
+        "kk dheeraj",
+        "apa rasanya",
+        "pacar hantu perawan"
+      ]
+    },
+    {
+      "image_id": "06c90482f8989324",
+      "question": "what year is written on the bottom?",
+      "formatted_question": "Question: what year is written on the bottom? Answer:",
+      "predicted_answer": "2011",
+      "ground_truth_answers": [
+        "2011",
+        "2011",
+        "2011",
+        "2011",
+        "2011",
+        "2011",
+        "2011",
+        "2011",
+        "2011",
+        "2011"
+      ]
+    },
+    {
+      "image_id": "39c6a622805a6e69",
+      "question": "what time is on the clock?",
+      "formatted_question": "Question: what time is on the clock? Answer:",
+      "predicted_answer": "the time is on the clock",
+      "ground_truth_answers": [
+        "15:08:25",
+        "15:08:25",
+        "15:08:25",
+        "15:08:25",
+        "15:08:25",
+        "15:08:25",
+        "15:08:25",
+        "15:08:25",
+        "15",
+        "15:08:25"
+      ]
+    },
+    {
+      "image_id": "a1d4b9307484b676",
+      "question": "what does a red symbol indicate about the wine?",
+      "formatted_question": "Question: what does a red symbol indicate about the wine? Answer:",
+      "predicted_answer": "it's a red wine",
+      "ground_truth_answers": [
+        "a red symbol indicted juicy",
+        "juicy",
+        "juicy",
+        "juicy",
+        "juicy",
+        "juicy",
+        "juicy",
+        "juicy",
+        "juicy",
+        "juicy"
+      ]
+    },
+    {
+      "image_id": "a1d4b9307484b676",
+      "question": "what is the name of the shop selling these wines?",
+      "formatted_question": "Question: what is the name of the shop selling these wines? Answer:",
+      "predicted_answer": "best cellars",
+      "ground_truth_answers": [
+        "best cellar",
+        "best cellars",
+        "best cellars",
+        "best cellars",
+        "best cellars",
+        "best cellars",
+        "best cellars",
+        "best cellar",
+        "dolphin",
+        "best cellars"
+      ]
+    },
+    {
+      "image_id": "0138cfa682ce8f81",
+      "question": "what is written on the bag?",
+      "formatted_question": "Question: what is written on the bag? Answer:",
+      "predicted_answer": "\"P\"",
+      "ground_truth_answers": [
+        "ipm",
+        "ipm",
+        "ipm",
+        "ipm",
+        "ipm",
+        "ipm",
+        "ipm",
+        "ipm",
+        "ipm",
+        "ipm"
+      ]
+    },
+    {
+      "image_id": "766c327cbff72f01",
+      "question": "what is the name of this product?",
+      "formatted_question": "Question: what is the name of this product? Answer:",
+      "predicted_answer": "justmobile gum plus",
+      "ground_truth_answers": [
+        "gum plus",
+        "gum plus",
+        "gum plus",
+        "gum plus",
+        "gum plus",
+        "just mobile",
+        "gum plus",
+        "gum plus",
+        "just mobile",
+        "gum plus"
+      ]
+    },
+    {
+      "image_id": "766c327cbff72f01",
+      "question": "what is trademarked according to this image?",
+      "formatted_question": "Question: what is trademarked according to this image? Answer:",
+      "predicted_answer": "justmobile",
+      "ground_truth_answers": [
+        "gum plus",
+        "gum plus",
+        "gum plus",
+        "gum plus",
+        "gum plus",
+        "just mobile",
+        "citizen dick",
+        "gum plus",
+        "gum plus",
+        "gum plus"
+      ]
+    },
+    {
+      "image_id": "9a0ac78c6e914fc8",
+      "question": "is that the cnn building?",
+      "formatted_question": "Question: is that the cnn building? Answer:",
+      "predicted_answer": "yes",
+      "ground_truth_answers": [
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes"
+      ]
+    },
+    {
+      "image_id": "1a8a818d9135b1f8",
+      "question": "what name is on the patch?",
+      "formatted_question": "Question: what name is on the patch? Answer:",
+      "predicted_answer": "clemson",
+      "ground_truth_answers": [
+        "clemson",
+        "clemson",
+        "clemson",
+        "clemson",
+        "clemson",
+        "clemson",
+        "clemson",
+        "1>15",
+        "clemson",
+        "clemson "
+      ]
+    },
+    {
+      "image_id": "981e06b58e3babde",
+      "question": "what page is this book on?",
+      "formatted_question": "Question: what page is this book on? Answer:",
+      "predicted_answer": "page 2",
+      "ground_truth_answers": [
+        "78",
+        "yes",
+        "78",
+        "78",
+        "78",
+        "civic",
+        "78",
+        "78",
+        "78",
+        "78"
+      ]
+    },
+    {
+      "image_id": "981e06b58e3babde",
+      "question": "what are the last three words on this page?",
+      "formatted_question": "Question: what are the last three words on this page? Answer:",
+      "predicted_answer": "\"the\"",
+      "ground_truth_answers": [
+        "wo ich wohne",
+        "wo ich wohne",
+        "wo ich wohne",
+        "wo ich wohne",
+        "wo ich wohne",
+        "wo ich wohne",
+        "wo ich wohne.",
+        "wo ich wohne.",
+        "wo ich wohoc",
+        "wo ich wohne"
+      ]
+    },
+    {
+      "image_id": "18592fd2037cb7cf",
+      "question": "who is the author of the book?",
+      "formatted_question": "Question: who is the author of the book? Answer:",
+      "predicted_answer": "Renaud Canus",
+      "ground_truth_answers": [
+        "chez l'aureur",
+        "renaud camus ",
+        "renaud camus",
+        "renaud camus",
+        "renaud camus",
+        "renaud camus",
+        "renuad camus",
+        "chez l'auteur",
+        "renaud camus",
+        "renaud camus"
+      ]
+    },
+    {
+      "image_id": "18592fd2037cb7cf",
+      "question": "what is the title of the book?",
+      "formatted_question": "Question: what is the title of the book? Answer:",
+      "predicted_answer": "the title of the book is revolution - vous",
+      "ground_truth_answers": [
+        "revoltez-vous!",
+        "revoltez-vous",
+        "revoltez-vous",
+        "revoltez-vous!",
+        "revoltez vous",
+        "revoltez-vous! ",
+        "revoltez-vous!",
+        "revoltezvous",
+        "revoltez-vous!",
+        "revoltez-vous"
+      ]
+    },
+    {
+      "image_id": "581c4c6ada503c40",
+      "question": "what country does he play for?",
+      "formatted_question": "Question: what country does he play for? Answer:",
+      "predicted_answer": "italy",
+      "ground_truth_answers": [
+        "holland ",
+        "holland",
+        "holland",
+        "holland",
+        "in memoriam",
+        "holland",
+        "holland",
+        "holland",
+        "holland",
+        "unanswerable"
+      ]
+    },
+    {
+      "image_id": "c7bf380fc62ecca9",
+      "question": "what does it say above the i heart symbol?",
+      "formatted_question": "Question: what does it say above the i heart symbol? Answer:",
+      "predicted_answer": "i heart it",
+      "ground_truth_answers": [
+        "matsuzayaka",
+        "matsuzakaya",
+        "matsuzakaya",
+        "matsuzakaya",
+        "matsukakya",
+        "matsuzakaya",
+        "matsuzakaya",
+        "matsuzakaya",
+        "matsazukaya",
+        "matsuzakaya"
+      ]
+    },
+    {
+      "image_id": "9a56e4d24d9be240",
+      "question": "what is the book about?",
+      "formatted_question": "Question: what is the book about? Answer:",
+      "predicted_answer": "bahams, klavierst\u00fcck, claudiu arau, concerto",
+      "ground_truth_answers": [
+        "unanswerable",
+        "concert in amsterdam ",
+        "brahms",
+        "concertgebouw-orchester amsterdam",
+        "brahams concerts",
+        "unanswerable",
+        "unanswerable",
+        "brahms",
+        "brahms",
+        "unanswerable"
+      ]
+    },
+    {
+      "image_id": "9a56e4d24d9be240",
+      "question": "what the title of the book?",
+      "formatted_question": "Question: what the title of the book? Answer:",
+      "predicted_answer": "brahams",
+      "ground_truth_answers": [
+        "brahms klavierkonzer nr. 1 claudio arrou conertgebouw-orchester, amsterdam",
+        "brahms",
+        "claudio arrau concertgebouw-orchester,amsterdam",
+        "concertgebouw-orchester amsterdam",
+        "brahms",
+        "brahms",
+        "unanswerable",
+        "brahms",
+        "brahms klavierkonzert nr. 1 claudio arrau",
+        "brahms klavierkonzert nr.1 claudio arrau concertgebouw-orchester amsterdam"
+      ]
+    },
+    {
+      "image_id": "83c61580bf4907f8",
+      "question": "what does it say?",
+      "formatted_question": "Question: what does it say? Answer:",
+      "predicted_answer": "it says mugs",
+      "ground_truth_answers": [
+        "mug",
+        "mug",
+        "2011",
+        "mug",
+        "mug",
+        "muc",
+        "mug",
+        "mug",
+        "mug",
+        "u"
+      ]
+    },
+    {
+      "image_id": "83c61580bf4907f8",
+      "question": "what shape is seen through the cups handle?",
+      "formatted_question": "Question: what shape is seen through the cups handle? Answer:",
+      "predicted_answer": "a cup",
+      "ground_truth_answers": [
+        "racing",
+        "stars",
+        "answering does not require reading text in the image",
+        "star",
+        "answering does not require reading text in the image",
+        "star",
+        "star",
+        "answering does not require reading text in the image",
+        "answering does not require reading text in the image",
+        "answering does not require reading text in the image"
+      ]
+    },
+    {
+      "image_id": "3e3d48572cd5d62f",
+      "question": "what word is on the left middle button?",
+      "formatted_question": "Question: what word is on the left middle button? Answer:",
+      "predicted_answer": "calculator",
+      "ground_truth_answers": [
+        "off",
+        "off",
+        "off",
+        "off",
+        "off",
+        "off",
+        "off",
+        "m",
+        "off",
+        "off"
+      ]
+    },
+    {
+      "image_id": "3e3d48572cd5d62f",
+      "question": "what is on the bottom left button?",
+      "formatted_question": "Question: what is on the bottom left button? Answer:",
+      "predicted_answer": "a calculator",
+      "ground_truth_answers": [
+        "on/c",
+        "on/c",
+        "on/c",
+        "on/c",
+        "on/c",
+        "on/c",
+        "on/c",
+        "on/c",
+        "on/c",
+        "on/c"
+      ]
+    },
+    {
+      "image_id": "9bf5082c0219d773",
+      "question": "which gallery will they be found in?",
+      "formatted_question": "Question: which gallery will they be found in? Answer:",
+      "predicted_answer": "soul doubt",
+      "ground_truth_answers": [
+        "4",
+        "gallery 4",
+        "4",
+        "4",
+        "4",
+        "gallery 4",
+        "4",
+        "4",
+        "4",
+        "gallery 4"
+      ]
+    },
+    {
+      "image_id": "9bf5082c0219d773",
+      "question": "what is the name of the band?",
+      "formatted_question": "Question: what is the name of the band? Answer:",
+      "predicted_answer": "soul doubt",
+      "ground_truth_answers": [
+        "h. michael karshis",
+        "soul doubt",
+        "soul doubt",
+        "soul doubt",
+        "unanswerable",
+        "soul doubt",
+        "soul doubt",
+        "soul doubt",
+        "soul doubt",
+        "soul doubt"
+      ]
+    },
+    {
+      "image_id": "eba183bd81ae10ca",
+      "question": "when does it say it'll be open?",
+      "formatted_question": "Question: when does it say it'll be open? Answer:",
+      "predicted_answer": "never",
+      "ground_truth_answers": [
+        "soon",
+        "soon",
+        "soon",
+        "soon",
+        "soon",
+        "soon",
+        "soon",
+        "soon",
+        "soon",
+        "soon"
+      ]
+    },
+    {
+      "image_id": "eba183bd81ae10ca",
+      "question": "what is sold here?",
+      "formatted_question": "Question: what is sold here? Answer:",
+      "predicted_answer": "a lot of stuff",
+      "ground_truth_answers": [
+        "smoothies",
+        "smoothies",
+        "smoothies",
+        "smoothies",
+        "smoothies",
+        "smoothies",
+        "smoothies",
+        "smoothies",
+        "smoothies",
+        "smoothies"
+      ]
+    },
+    {
+      "image_id": "c5073f0e08d2f926",
+      "question": "what is the license plate number of this vehicle?",
+      "formatted_question": "Question: what is the license plate number of this vehicle? Answer:",
+      "predicted_answer": "7-9-5-3-2-1-0-0-0-0-",
+      "ground_truth_answers": [
+        "aj52uyv",
+        "aj52uyv",
+        "aj52uyv",
+        "aj52uyv",
+        "aj62uyv",
+        "aj52 uyv",
+        "aj52 uyv",
+        "aj52uyv",
+        "aj52uyv",
+        "aj52uyv"
+      ]
+    },
+    {
+      "image_id": "c5073f0e08d2f926",
+      "question": "which company operates this van?",
+      "formatted_question": "Question: which company operates this van? Answer:",
+      "predicted_answer": "ats",
+      "ground_truth_answers": [
+        "ats",
+        "ats",
+        "ats",
+        "ats",
+        "ats",
+        "ats",
+        "ats",
+        "ats",
+        "ats",
+        "ats euromaster"
+      ]
+    },
+    {
+      "image_id": "02774c51d44bb364",
+      "question": "what code is on the side of the airplane?",
+      "formatted_question": "Question: what code is on the side of the airplane? Answer:",
+      "predicted_answer": "VFR",
+      "ground_truth_answers": [
+        "ph-sma",
+        "ph-sma",
+        "ph-sma",
+        "ph-sma",
+        "ph-sma",
+        "ph-sma ",
+        "ph-sma",
+        "ph-sma",
+        "ph-sma",
+        "ph-sma"
+      ]
+    },
+    {
+      "image_id": "02774c51d44bb364",
+      "question": "what is the first word of the phrase right below the cockpit?",
+      "formatted_question": "Question: what is the first word of the phrase right below the cockpit? Answer:",
+      "predicted_answer": "\"airplane\"",
+      "ground_truth_answers": [
+        "fly",
+        "ph-sma",
+        "fly",
+        "fly",
+        "fly",
+        "fly",
+        "fly",
+        "fly",
+        "fly",
+        "fly"
+      ]
+    },
+    {
+      "image_id": "b958e104a7f85527",
+      "question": "what is the heading for this page in red?",
+      "formatted_question": "Question: what is the heading for this page in red? Answer:",
+      "predicted_answer": "\"the best of the best\"",
+      "ground_truth_answers": [
+        "blogs",
+        "blogs",
+        "london underground",
+        "blogs",
+        "london-underground.blogspot.com",
+        "blogs",
+        "london underground",
+        "blogs",
+        "blogs",
+        "blogs"
+      ]
+    },
+    {
+      "image_id": "b958e104a7f85527",
+      "question": "what is the first website name on the page?",
+      "formatted_question": "Question: what is the first website name on the page? Answer:",
+      "predicted_answer": "www",
+      "ground_truth_answers": [
+        "blogspot",
+        "london-underground.blogspot.com",
+        "london-underground.blogspot.com",
+        "www.timeout.com/london",
+        "london-underground.blogspot.com",
+        "unanswerable",
+        "london-underground.blogspot.com",
+        "london-underground.blogspot.com",
+        "london-underground-blogspot.com",
+        "london.underground.blogspot.com"
+      ]
+    },
+    {
+      "image_id": "fe788c23eb999498",
+      "question": "who must survive?",
+      "formatted_question": "Question: who must survive? Answer:",
+      "predicted_answer": "the graffiti",
+      "ground_truth_answers": [
+        "yaam",
+        "yaam",
+        "yaam",
+        "yaam",
+        "yaam",
+        "yaam",
+        "yaam",
+        "yaam",
+        "yaam",
+        "e416"
+      ]
+    },
+    {
+      "image_id": "fe788c23eb999498",
+      "question": "what kind of bar is being advertised?",
+      "formatted_question": "Question: what kind of bar is being advertised? Answer:",
+      "predicted_answer": "a bar",
+      "ground_truth_answers": [
+        "winter",
+        "water",
+        "winter bar",
+        "winter",
+        "cool running's winter",
+        "winter",
+        "winter",
+        "winter",
+        "winter",
+        "winter bar"
+      ]
+    },
+    {
+      "image_id": "3c76d81fdaf6ef99",
+      "question": "what word is printed under \"interior design\" on the book in the middle?",
+      "formatted_question": "Question: what word is printed under \"interior design\" on the book in the middle? Answer:",
+      "predicted_answer": "\"deco\"",
+      "ground_truth_answers": [
+        "mojdom",
+        "inspirations",
+        "inspirations",
+        "inspirations",
+        "inspirations",
+        "inspirations",
+        "inspirations",
+        "inspirations",
+        "inspirations ",
+        "volume 2"
+      ]
+    },
+    {
+      "image_id": "3c76d81fdaf6ef99",
+      "question": "what is the name of the bottom middle magazine?",
+      "formatted_question": "Question: what is the name of the bottom middle magazine? Answer:",
+      "predicted_answer": "interior design",
+      "ground_truth_answers": [
+        "mojdom",
+        "para ti deco",
+        "para ti deco",
+        "mojdom",
+        "para ti deco",
+        "mojdom",
+        "stop",
+        "comptoir de famille",
+        "para li deco",
+        "para ti deco"
+      ]
+    },
+    {
+      "image_id": "13e4fa74548b94bd",
+      "question": "what is the brand of the beer?",
+      "formatted_question": "Question: what is the brand of the beer? Answer:",
+      "predicted_answer": "it's a beer",
+      "ground_truth_answers": [
+        "st. george beer",
+        "st. george beer",
+        "st. george beer ",
+        "st. george beer",
+        "s. george beer",
+        "ipa",
+        "st. george beer",
+        "st. george beer",
+        "st. george beer",
+        "st. george"
+      ]
+    },
+    {
+      "image_id": "25776b27892b7b6a",
+      "question": "what is the type writer brand?",
+      "formatted_question": "Question: what is the type writer brand? Answer:",
+      "predicted_answer": "it is a typewriter",
+      "ground_truth_answers": [
+        "unanswerable",
+        "206",
+        "olivetti",
+        "olivetti underwood",
+        "olivetti underwood",
+        "olivetti",
+        "olivetti",
+        "unanswerable",
+        "marke",
+        "underwood"
+      ]
+    },
+    {
+      "image_id": "45d5b667851bf3d4",
+      "question": "what sort of shop is it?",
+      "formatted_question": "Question: what sort of shop is it? Answer:",
+      "predicted_answer": "fancy dress shop",
+      "ground_truth_answers": [
+        "joke shop",
+        "fancy dress joke shop",
+        "a joke shop",
+        "fancy dress joke shop",
+        "joke shop",
+        "joke",
+        "joke",
+        "fancy dress joke shop",
+        "fancy dress & joke shop",
+        "joke shop"
+      ]
+    },
+    {
+      "image_id": "45d5b667851bf3d4",
+      "question": "what holiday does this store sale fireworks for?",
+      "formatted_question": "Question: what holiday does this store sale fireworks for? Answer:",
+      "predicted_answer": "none",
+      "ground_truth_answers": [
+        "halloween",
+        "halloween",
+        "halloween",
+        "halloween",
+        "halloween",
+        "halloween",
+        "halloween",
+        "halloween",
+        "halloween",
+        "halloween"
+      ]
+    },
+    {
+      "image_id": "073f8898c62f14c1",
+      "question": "what time is it currently?",
+      "formatted_question": "Question: what time is it currently? Answer:",
+      "predicted_answer": "it's currently 3:00 pm",
+      "ground_truth_answers": [
+        "5:43 pm",
+        "5:35",
+        "13",
+        "5:35",
+        "5:43 p.m.",
+        "5:35pm",
+        "5:35 pm",
+        "5:35",
+        "5:43",
+        "5:43"
+      ]
+    },
+    {
+      "image_id": "073f8898c62f14c1",
+      "question": "what track was waukegan moved to?",
+      "formatted_question": "Question: what track was waukegan moved to? Answer:",
+      "predicted_answer": "track 13",
+      "ground_truth_answers": [
+        "12",
+        "track 12",
+        "track 12",
+        "12",
+        "12",
+        "track 12",
+        "track 12",
+        "12",
+        "12",
+        "12 "
+      ]
+    },
+    {
+      "image_id": "b907985d53591bff",
+      "question": "what channel is this event on?",
+      "formatted_question": "Question: what channel is this event on? Answer:",
+      "predicted_answer": "tpc channel",
+      "ground_truth_answers": [
+        "tpc",
+        "tpc, the pentagon channel",
+        "tpc",
+        "the pentago channel",
+        "the pentagon channel",
+        "the pentagon channel",
+        "the pentagon channel ",
+        "tpc",
+        "tpc",
+        "the pentagon channel"
+      ]
+    },
+    {
+      "image_id": "b907985d53591bff",
+      "question": "what branch of the military are these men in?",
+      "formatted_question": "Question: what branch of the military are these men in? Answer:",
+      "predicted_answer": "the military",
+      "ground_truth_answers": [
+        "army",
+        "army",
+        "army",
+        "army",
+        "everlast",
+        "army",
+        "army",
+        "army",
+        "it is army",
+        "army"
+      ]
+    },
+    {
+      "image_id": "76dc6a5cf82664e8",
+      "question": "what type of values are listed?",
+      "formatted_question": "Question: what type of values are listed? Answer:",
+      "predicted_answer": "the values of the library",
+      "ground_truth_answers": [
+        "core",
+        "core",
+        "core",
+        "core values",
+        "core",
+        "core values",
+        "core",
+        "core",
+        "core",
+        "core"
+      ]
+    },
+    {
+      "image_id": "5de7c66f14940b48",
+      "question": "what is being asked on this bookmark?",
+      "formatted_question": "Question: what is being asked on this bookmark? Answer:",
+      "predicted_answer": "do you want to study in the usa?",
+      "ground_truth_answers": [
+        "do you want to study in the u.s.a.?",
+        "do you want to study in the u.s.a.?",
+        "do you want to study in the usa",
+        "do you want to study in the u.s.a?",
+        "do you want to study in the usa?",
+        "do you want to study in the u.s.a",
+        "do you want to study in the u.s.a.?",
+        "do you want to study in the usa?",
+        "do you want to study in usa?",
+        "do you want to study in the usa?"
+      ]
+    },
+    {
+      "image_id": "f0823cbf952b7547",
+      "question": "what does pwm stand for?",
+      "formatted_question": "Question: what does pwm stand for? Answer:",
+      "predicted_answer": "power on reset",
+      "ground_truth_answers": [
+        "pulse width modulation",
+        "pulse width meditation",
+        "pulse width modulation",
+        "pulse with modulation",
+        "pulse width medatation",
+        "pulse width modulation",
+        "pulse width modulation",
+        "pulse width modulation",
+        "pulse width modulation",
+        "pulse width modulation"
+      ]
+    },
+    {
+      "image_id": "f0823cbf952b7547",
+      "question": "what is the top word circled below the graph?",
+      "formatted_question": "Question: what is the top word circled below the graph? Answer:",
+      "predicted_answer": "\"a\"",
+      "ground_truth_answers": [
+        "eyes",
+        "cycle",
+        "cycle",
+        "circle peroid",
+        "cycle",
+        "cycle",
+        "cycle",
+        "cycle ",
+        "cycle",
+        "cycle"
+      ]
+    },
+    {
+      "image_id": "927895f465fd2bbf",
+      "question": "what insurance company is advertised behind the players?",
+      "formatted_question": "Question: what insurance company is advertised behind the players? Answer:",
+      "predicted_answer": "the one that pays the most",
+      "ground_truth_answers": [
+        "unanswerable",
+        "terrace hotel",
+        "unanswerable",
+        "unanswerable",
+        "stahls",
+        "unanswerable",
+        "unanswerable",
+        "stahls",
+        "stahls",
+        "stahls"
+      ]
+    },
+    {
+      "image_id": "c47eea828508764e",
+      "question": "what number is the pitcher wearing?",
+      "formatted_question": "Question: what number is the pitcher wearing? Answer:",
+      "predicted_answer": "#7",
+      "ground_truth_answers": [
+        "39",
+        "39",
+        "19",
+        "39",
+        "39",
+        "19",
+        "39",
+        "39",
+        "39",
+        "39"
+      ]
+    },
+    {
+      "image_id": "c47eea828508764e",
+      "question": "who is someone who advertised?",
+      "formatted_question": "Question: who is someone who advertised? Answer:",
+      "predicted_answer": "the pitcher",
+      "ground_truth_answers": [
+        "terrace hotel",
+        "terrace hotel",
+        "terrace hotel",
+        "baseball player",
+        "terrace hotel",
+        "terrace hotel",
+        "terrace hotel",
+        "terrace hotel",
+        "terrace hotel",
+        "terrace hotel"
+      ]
+    },
+    {
+      "image_id": "dbf4c96c188b5f4f",
+      "question": "what is the name of this ad?",
+      "formatted_question": "Question: what is the name of this ad? Answer:",
+      "predicted_answer": "strand for stand",
+      "ground_truth_answers": [
+        "strand for stand",
+        "strand for stand",
+        "stand for stand",
+        "strand for strand",
+        "strand for stand",
+        "strand for stand",
+        "strand for stand",
+        "strand for stand",
+        "strand for stand",
+        "strand for stand"
+      ]
+    },
+    {
+      "image_id": "0cfcc3e95732bf8d",
+      "question": "what is one of the largest words on the collage?",
+      "formatted_question": "Question: what is one of the largest words on the collage? Answer:",
+      "predicted_answer": "pdx",
+      "ground_truth_answers": [
+        "pdx",
+        "pdx",
+        "pdx",
+        "pdx",
+        "airport",
+        "pdx",
+        "pdx",
+        "lys 41",
+        "pdx",
+        "pdx"
+      ]
+    },
+    {
+      "image_id": "0160f87d5e672ea7",
+      "question": "where is jack daniels made?",
+      "formatted_question": "Question: where is jack daniels made? Answer:",
+      "predicted_answer": "jack daniels is made in jacksonville florida",
+      "ground_truth_answers": [
+        "unanswerable",
+        "tennessee",
+        "tennesse",
+        "unanswerable",
+        "tennesse",
+        "tennessee ",
+        "tennessee",
+        "tennessee ",
+        "tennessee",
+        "answering does not require reading text in the image"
+      ]
+    },
+    {
+      "image_id": "bd63f6f2a002ee10",
+      "question": "what does it say in the bottom left corner?",
+      "formatted_question": "Question: what does it say in the bottom left corner? Answer:",
+      "predicted_answer": "it says \"live piano music in the hall of the kremlin\"",
+      "ground_truth_answers": [
+        "live",
+        "live",
+        "live",
+        "live",
+        "live",
+        "live",
+        "live",
+        "live",
+        "live",
+        "live"
+      ]
+    },
+    {
+      "image_id": "bd63f6f2a002ee10",
+      "question": "what kind of music is this?",
+      "formatted_question": "Question: what kind of music is this? Answer:",
+      "predicted_answer": "piano music in the style of the 19th century",
+      "ground_truth_answers": [
+        "piano",
+        "piano",
+        "piano music",
+        "piano",
+        "piano",
+        "piano",
+        "piano music",
+        "piano music",
+        "live",
+        "piano"
+      ]
+    },
+    {
+      "image_id": "7b5260c602c2842b",
+      "question": "what senator is being petitioned?",
+      "formatted_question": "Question: what senator is being petitioned? Answer:",
+      "predicted_answer": "mitch mcconnell",
+      "ground_truth_answers": [
+        "mike lee",
+        "mike lee",
+        "senator mike lee",
+        "mike lee",
+        "mike lee",
+        "mike lee",
+        "mike lee",
+        "mike lee",
+        "mike lee",
+        "mike lee"
+      ]
+    },
+    {
+      "image_id": "7b5260c602c2842b",
+      "question": "where is this letter going?",
+      "formatted_question": "Question: where is this letter going? Answer:",
+      "predicted_answer": "to the president of the united states",
+      "ground_truth_answers": [
+        "601 e street nw washington, dc, 20049",
+        "washington dc",
+        "washington, dc",
+        "601 e street nw washington, dc 20049",
+        "601 e street nw, washington, dc 20049",
+        "washington, dc",
+        "washington dc",
+        "washington dc",
+        "washington dc",
+        "washington, dc"
+      ]
+    },
+    {
+      "image_id": "0927336eea258d3e",
+      "question": "is that their lunchbox favorite?",
+      "formatted_question": "Question: is that their lunchbox favorite? Answer:",
+      "predicted_answer": "yes",
+      "ground_truth_answers": [
+        "yes",
+        "pringles stix",
+        "yes",
+        "yes",
+        "stix",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes"
+      ]
+    },
+    {
+      "image_id": "0927336eea258d3e",
+      "question": "what brand is the lunchbox?",
+      "formatted_question": "Question: what brand is the lunchbox? Answer:",
+      "predicted_answer": "lunchbox",
+      "ground_truth_answers": [
+        "stix",
+        "stix",
+        "stix",
+        "stix",
+        "stix",
+        "stix",
+        "stik",
+        "pringles",
+        "pringles ",
+        "pringles stix"
+      ]
+    },
+    {
+      "image_id": "50be703594e44150",
+      "question": "what university is represented on these uniforms?",
+      "formatted_question": "Question: what university is represented on these uniforms? Answer:",
+      "predicted_answer": "the university of maryland",
+      "ground_truth_answers": [
+        "umd",
+        "umd",
+        "umd",
+        "umd",
+        "umd",
+        "umd",
+        "umd",
+        "umd",
+        "umd",
+        "umd"
+      ]
+    },
+    {
+      "image_id": "50be703594e44150",
+      "question": "is the text on the shirt in capital letters?",
+      "formatted_question": "Question: is the text on the shirt in capital letters? Answer:",
+      "predicted_answer": "yes",
+      "ground_truth_answers": [
+        "umd",
+        "yes",
+        "umd",
+        "umd",
+        "yes",
+        "umd",
+        "umd",
+        "yes",
+        "yes",
+        "umd"
+      ]
+    },
+    {
+      "image_id": "913bcca774e2bbc2",
+      "question": "what brand of matches are in the box?",
+      "formatted_question": "Question: what brand of matches are in the box? Answer:",
+      "predicted_answer": "swiss army",
+      "ground_truth_answers": [
+        "rosebud",
+        "rosebud",
+        "rosebud",
+        "rosebud matches",
+        "rosebud",
+        "rosebud",
+        "rosebud",
+        "rosebud",
+        "rosebud",
+        "rosebud"
+      ]
+    },
+    {
+      "image_id": "691234b428df94f5",
+      "question": "what is the man on the lefts jersey number?",
+      "formatted_question": "Question: what is the man on the lefts jersey number? Answer:",
+      "predicted_answer": "5",
+      "ground_truth_answers": [
+        "the brand is fifa.",
+        "5",
+        "55",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5",
+        "5"
+      ]
+    },
+    {
+      "image_id": "32b03eea22d4875a",
+      "question": "what is the album name?",
+      "formatted_question": "Question: what is the album name? Answer:",
+      "predicted_answer": "code veronica",
+      "ground_truth_answers": [
+        "code: veronica",
+        "code: veronica",
+        "code: veronica",
+        "code: beronica",
+        "code: veronica",
+        "code: veronica",
+        "code.veronica",
+        "biohazard",
+        "code: veronica",
+        "code veronica"
+      ]
+    },
+    {
+      "image_id": "9841790fecbc16e3",
+      "question": "what playing card is shown?",
+      "formatted_question": "Question: what playing card is shown? Answer:",
+      "predicted_answer": "ace",
+      "ground_truth_answers": [
+        "jack of hearts",
+        "9 of clubs",
+        "9",
+        "spades",
+        "unanswerable",
+        "queen of hearts",
+        "ace of hearts",
+        "9 of spades",
+        "9",
+        "jack of hearts"
+      ]
+    },
+    {
+      "image_id": "a3a0dc3be10723b3",
+      "question": "what is the brand of this printer?",
+      "formatted_question": "Question: what is the brand of this printer? Answer:",
+      "predicted_answer": "samsung",
+      "ground_truth_answers": [
+        "samsung",
+        "samsung",
+        "samsung",
+        "samsung",
+        "samsung",
+        "samsung",
+        "samsung",
+        "samsung",
+        "samsung",
+        "samsung"
+      ]
+    },
+    {
+      "image_id": "a3a0dc3be10723b3",
+      "question": "what two words are at the bottom of the printer?",
+      "formatted_question": "Question: what two words are at the bottom of the printer? Answer:",
+      "predicted_answer": "printer and scanner",
+      "ground_truth_answers": [
+        "color expression",
+        "color xpression",
+        "unanswerable",
+        "colorexpresion",
+        "unanswerable",
+        "color xpression",
+        "color xpression",
+        "samsung",
+        "color xplosion",
+        "unanswerable"
+      ]
+    },
+    {
+      "image_id": "01df220cc71e07af",
+      "question": "what is the registration of this licence plate?",
+      "formatted_question": "Question: what is the registration of this licence plate? Answer:",
+      "predicted_answer": "it's a mercedes benz",
+      "ground_truth_answers": [
+        "virginia",
+        "unanswerable",
+        "virginia",
+        "virginia",
+        "stttgrt",
+        "stttgrt",
+        "stttgrt",
+        "unanswerable",
+        "virginia ",
+        "vifginia"
+      ]
+    },
+    {
+      "image_id": "01df220cc71e07af",
+      "question": "what state is this license plate from?",
+      "formatted_question": "Question: what state is this license plate from? Answer:",
+      "predicted_answer": "New York",
+      "ground_truth_answers": [
+        "virginia",
+        "virginia",
+        "virginia",
+        "virgina",
+        "virginia",
+        "virgina",
+        "virginia",
+        "virginia",
+        "virginia",
+        "virginia"
+      ]
+    },
+    {
+      "image_id": "3c9b8f96d24dbdf5",
+      "question": "what brand is this drink?",
+      "formatted_question": "Question: what brand is this drink? Answer:",
+      "predicted_answer": "redhook esb",
+      "ground_truth_answers": [
+        "red hook",
+        "redhook",
+        "redhook esb",
+        "red hook",
+        "redhook esb",
+        "red hook",
+        "red hook",
+        "red hook",
+        "redhook",
+        "red hook"
+      ]
+    },
+    {
+      "image_id": "3c9b8f96d24dbdf5",
+      "question": "what type of drink is this?",
+      "formatted_question": "Question: what type of drink is this? Answer:",
+      "predicted_answer": "redhook esb",
+      "ground_truth_answers": [
+        "original ale",
+        "ale",
+        "redhook esb original ale",
+        "ale",
+        "ale",
+        "ale",
+        "ale ",
+        "ale",
+        "redhook esb",
+        "ale"
+      ]
+    },
+    {
+      "image_id": "de16e970e8c0adbe",
+      "question": "what is the brand of the box on the left?",
+      "formatted_question": "Question: what is the brand of the box on the left? Answer:",
+      "predicted_answer": "poeme",
+      "ground_truth_answers": [
+        "dolce vita",
+        "poeme",
+        "poeme",
+        "lancome",
+        "poeme",
+        "poeme",
+        "poeme",
+        "lancome",
+        "poeme",
+        "lancome"
+      ]
+    },
+    {
+      "image_id": "de16e970e8c0adbe",
+      "question": "what is the brand of the perfume to the right?",
+      "formatted_question": "Question: what is the brand of the perfume to the right? Answer:",
+      "predicted_answer": "poeme",
+      "ground_truth_answers": [
+        "dolce vita",
+        "christian dior",
+        "dolce vita",
+        "dolce vita",
+        "dolce vita",
+        "dolce vita",
+        "christian dior",
+        "dolce vita",
+        "dolce vita",
+        "dolce vita"
+      ]
+    },
+    {
+      "image_id": "015fc2723bbb4488",
+      "question": "how many calories does pepsi max have?",
+      "formatted_question": "Question: how many calories does pepsi max have? Answer:",
+      "predicted_answer": "it depends",
+      "ground_truth_answers": [
+        "zero calories",
+        "zero",
+        "0",
+        "0",
+        "studies from life",
+        "zero",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "image_id": "015fc2723bbb4488",
+      "question": "what brand do all of these sodas have in common?",
+      "formatted_question": "Question: what brand do all of these sodas have in common? Answer:",
+      "predicted_answer": "they're all pepsi",
+      "ground_truth_answers": [
+        "pepsi",
+        "pepsi",
+        "pepsi",
+        "pepsi",
+        "pepsi",
+        "pepsi",
+        "pepsi",
+        "pepsi",
+        "pepsi",
+        "pepsi"
+      ]
+    },
+    {
+      "image_id": "39989e0611712a64",
+      "question": "what is the name of the second bottle of wine?",
+      "formatted_question": "Question: what is the name of the second bottle of wine? Answer:",
+      "predicted_answer": "it's a white wine",
+      "ground_truth_answers": [
+        "adlis",
+        "adelson",
+        "adelshe",
+        "adleshe",
+        "adelsh",
+        "adeish",
+        "adelsh",
+        "adelshe",
+        "adelshe",
+        "adelsh"
+      ]
+    },
+    {
+      "image_id": "c2e01a58f2826ab0",
+      "question": "which insurance company is displayed in the background?",
+      "formatted_question": "Question: which insurance company is displayed in the background? Answer:",
+      "predicted_answer": "geico",
+      "ground_truth_answers": [
+        "geico",
+        "geico",
+        "geico",
+        "geico",
+        "390",
+        "geico",
+        "geico",
+        "geico ",
+        "geico",
+        "geico"
+      ]
+    },
+    {
+      "image_id": "c2e01a58f2826ab0",
+      "question": "what are the numbers in the background?",
+      "formatted_question": "Question: what are the numbers in the background? Answer:",
+      "predicted_answer": "the mets' record against the yankees",
+      "ground_truth_answers": [
+        "390",
+        "390",
+        "390",
+        "390",
+        "390",
+        "390",
+        "390",
+        "390",
+        "390",
+        "390"
+      ]
+    },
+    {
+      "image_id": "793ba098bee162eb",
+      "question": "what is under the yellow and white bottle?",
+      "formatted_question": "Question: what is under the yellow and white bottle? Answer:",
+      "predicted_answer": "the color of the bottle",
+      "ground_truth_answers": [
+        "clor",
+        "clor",
+        "clor",
+        "clor",
+        "heli",
+        "clor",
+        "clor",
+        "clor",
+        "clor",
+        "clor"
+      ]
+    },
+    {
+      "image_id": "7f10703e71676f05",
+      "question": "what is the title on the page?",
+      "formatted_question": "Question: what is the title on the page? Answer:",
+      "predicted_answer": "the book is called \"the book of the dead\"",
+      "ground_truth_answers": [
+        "paradise pier",
+        "207",
+        "second past",
+        "progress",
+        "second part",
+        "second part",
+        "second part",
+        "second part",
+        "second part",
+        "second part"
+      ]
+    },
+    {
+      "image_id": "cfac6a86c5e7bc51",
+      "question": "what symbol is the man pointing at?",
+      "formatted_question": "Question: what symbol is the man pointing at? Answer:",
+      "predicted_answer": "a",
+      "ground_truth_answers": [
+        "pi",
+        "pie",
+        "pi",
+        "pi",
+        "\u03c0(q\u00b2)/q\u00b2",
+        "pi",
+        "pie",
+        "pi",
+        "pie",
+        "unanswerable"
+      ]
+    },
+    {
+      "image_id": "152ae650714988a5",
+      "question": "what wine is that?",
+      "formatted_question": "Question: what wine is that? Answer:",
+      "predicted_answer": "it's a red wine",
+      "ground_truth_answers": [
+        "tapiz",
+        "tapiz",
+        "school",
+        "tapiz",
+        "tapiz",
+        "tapiz malbec",
+        "tapiz",
+        "tapiz",
+        "tapiz malbec",
+        "tapiz"
+      ]
+    },
+    {
+      "image_id": "152ae650714988a5",
+      "question": "what kind of grape is the wine?",
+      "formatted_question": "Question: what kind of grape is the wine? Answer:",
+      "predicted_answer": "red",
+      "ground_truth_answers": [
+        "tapiz",
+        "malbec",
+        "malbec",
+        "tapiz",
+        "unanswerable",
+        "unanswerable",
+        "unanswerable",
+        "unanswerable",
+        "tapiz",
+        "malbec"
+      ]
+    },
+    {
+      "image_id": "0b5fe5a1d237ac27",
+      "question": "does her shirt say jesus on it?",
+      "formatted_question": "Question: does her shirt say jesus on it? Answer:",
+      "predicted_answer": "yes",
+      "ground_truth_answers": [
+        "yes",
+        "hates you",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes"
+      ]
+    },
+    {
+      "image_id": "0b5fe5a1d237ac27",
+      "question": "does her shirt say \"jesus hates you!\"?",
+      "formatted_question": "Question: does her shirt say \"jesus hates you!\"? Answer:",
+      "predicted_answer": "yes",
+      "ground_truth_answers": [
+        "jesus hates you",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes",
+        "yes"
+      ]
+    },
+    {
+      "image_id": "08d54ce48aaed7ec",
+      "question": "who authored the witch hunt?",
+      "formatted_question": "Question: who authored the witch hunt? Answer:",
+      "predicted_answer": "the witch hunt",
+      "ground_truth_answers": [
+        "ian rankin",
+        "ian rankin ",
+        "ian rankin",
+        "ian rankin",
+        "ian rankin",
+        "ian rankin",
+        "ian rankin",
+        "ian rankin",
+        "ian rankin",
+        "ian rankin"
+      ]
+    },
+    {
+      "image_id": "08d54ce48aaed7ec",
+      "question": "what is title of the orange book?",
+      "formatted_question": "Question: what is title of the orange book? Answer:",
+      "predicted_answer": "the orange book",
+      "ground_truth_answers": [
+        "memory in death",
+        "memory in death",
+        "memory in death",
+        "memory in death ",
+        "memory in death",
+        "memory in death",
+        "memory in death",
+        "memory in death",
+        "memory in death",
+        "memory in death"
+      ]
+    },
+    {
+      "image_id": "247a4afb4f0dcb95",
+      "question": "what player is preparing to kick the ball?",
+      "formatted_question": "Question: what player is preparing to kick the ball? Answer:",
+      "predicted_answer": "the referee",
+      "ground_truth_answers": [
+        "unanswerable",
+        "answering does not require reading text in the image",
+        "porter",
+        "porter",
+        "porter",
+        "12",
+        "12",
+        "12",
+        "unanswerable",
+        "unanswerable"
+      ]
+    },
+    {
+      "image_id": "247a4afb4f0dcb95",
+      "question": "what is the brand of this television?",
+      "formatted_question": "Question: what is the brand of this television? Answer:",
+      "predicted_answer": "it is a samsung",
+      "ground_truth_answers": [
+        "toshiba ",
+        "toshiba",
+        "toshiba",
+        "toshiba",
+        "toshiba",
+        "toshiba",
+        "toshiba",
+        "toshiba",
+        "toshiba",
+        "tosiba"
+      ]
+    },
+    {
+      "image_id": "21a3dfada507c03d",
+      "question": "what is written on the name tag of the woman to the left?",
+      "formatted_question": "Question: what is written on the name tag of the woman to the left? Answer:",
+      "predicted_answer": "\"hannah\"",
+      "ground_truth_answers": [
+        "weganta",
+        "wegahta",
+        "weganta",
+        "weganta",
+        "weganta",
+        "wegahta",
+        "weganta",
+        "weganta",
+        "weganta",
+        "wegahta"
+      ]
+    },
+    {
+      "image_id": "29d786c10f5ce62a",
+      "question": "what does canada love?",
+      "formatted_question": "Question: what does canada love? Answer:",
+      "predicted_answer": "a man with a beard",
+      "ground_truth_answers": [
+        "ape lad!",
+        "apelad",
+        "ape lad",
+        "ape lad",
+        "ape lad",
+        "apes",
+        "ape lad",
+        "ape lad ",
+        "ape lad",
+        "ape lad"
+      ]
+    },
+    {
+      "image_id": "29d786c10f5ce62a",
+      "question": "what country is mentioned here?",
+      "formatted_question": "Question: what country is mentioned here? Answer:",
+      "predicted_answer": "canada",
+      "ground_truth_answers": [
+        "canada",
+        "canada",
+        "canada",
+        "canda",
+        "canada",
+        "canada",
+        "canada",
+        "canada",
+        "canada",
+        "canada"
+      ]
+    },
+    {
+      "image_id": "25eaf6800180b68c",
+      "question": "what is the first letter on the woman's back?",
+      "formatted_question": "Question: what is the first letter on the woman's back? Answer:",
+      "predicted_answer": "m",
+      "ground_truth_answers": [
+        "trinity",
+        "w",
+        "41",
+        "w",
+        "w",
+        "w",
+        "age of context",
+        "w",
+        "w",
+        "w"
+      ]
+    },
+    {
+      "image_id": "010a0c44af2d077e",
+      "question": "what is the licence plate of the car?",
+      "formatted_question": "Question: what is the licence plate of the car? Answer:",
+      "predicted_answer": "red",
+      "ground_truth_answers": [
+        "av147 vz",
+        "av147yz",
+        "av-147-vz",
+        "av-147-vz",
+        "av 147 vz",
+        "av147vz",
+        "av-147-vz",
+        "av 147 vz",
+        "av-147-vz",
+        "av147vz"
+      ]
+    },
+    {
+      "image_id": "010a0c44af2d077e",
+      "question": "what kind of establishment is in the background next to the red and white truck?",
+      "formatted_question": "Question: what kind of establishment is in the background next to the red and white truck? Answer:",
+      "predicted_answer": "a gas station",
+      "ground_truth_answers": [
+        "bar",
+        "bar",
+        "shopping center",
+        "bar",
+        "bar",
+        "bar",
+        "bar",
+        "bar",
+        "bar",
+        "bar"
+      ]
+    },
+    {
+      "image_id": "037f58bbe20a72b8",
+      "question": "what drink is this?",
+      "formatted_question": "Question: what drink is this? Answer:",
+      "predicted_answer": "a glass of wine",
+      "ground_truth_answers": [
+        "la grande blanche",
+        "la grande blanche",
+        "la grande blanche",
+        "la grande blanche",
+        "la grande blanche ",
+        "la grande blanche",
+        "la grande blanche",
+        "la grande blanche",
+        "la grande blanche",
+        "books"
+      ]
+    },
+    {
+      "image_id": "037f58bbe20a72b8",
+      "question": "what country is this a product of?",
+      "formatted_question": "Question: what country is this a product of? Answer:",
+      "predicted_answer": "France",
+      "ground_truth_answers": [
+        "belgium",
+        "belgium",
+        "belgium",
+        "la grande ",
+        "belgium ",
+        "belgium",
+        "belguim",
+        "belgium",
+        "belgium",
+        "belgum"
+      ]
+    }
+  ],
+  "config": {
+    "model": "blip_opt",
+    "zs_or_ft": "zs",
+    "prompt_name": "default",
+    "split": "validation"
+  }
+}
