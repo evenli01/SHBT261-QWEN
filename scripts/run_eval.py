@@ -17,7 +17,7 @@ from utils.metrics import calculate_metrics
 from models.qwen import QwenModel
 
 
-# ---------- OCR utilities (same as classmate) ----------
+# ---------- OCR utilities (same as  ) ----------
 
 def clean_ocr_text(ocr_tokens, max_tokens=15, min_token_length=2):
     """
@@ -130,7 +130,7 @@ PROMPT_TEMPLATES = {
     # Slightly tweaked short-answer style
     "short_direct": "Answer in 1–3 words: {question}",
 
-    # OCR-related templates (from classmate + your ablations)
+    # OCR-related templates
     "ocr_hint": "The image contains the following text: {ocr_text}. Question: {question} Answer:",
     "ocr_hint_v3": "Answer this question about the image: {question}\nVisible text in image: {ocr_text}\nAnswer:",
 
